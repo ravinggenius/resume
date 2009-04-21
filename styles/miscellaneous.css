@@ -14,9 +14,54 @@ a[href^='ssh']:after {
 	content: ' ssh';
 }*/
 
-a:visited:before {
+/*a:visited:before {
 	content: '\2713 ';
-}
+}*/
+
+.section {
+}
+
+	.legend {
+	}
+		.legend ul {
+		}
+			.legend ul li {
+			}
+
+	.section h2,
+	.section h3 {
+	}
+	.section span {
+	}
+	.section .description {
+	}
+
+	.section .master h3:after,
+	.legend .master:after {
+		content: ' \2713\2713\2713\2713';
+		font-size: 0.8em;
+	}
+	.section .fluent h3:after,
+	.legend .fluent:after {
+		content: ' \2713\2713\2713\2713';
+		font-size: 0.8em;
+	}
+	.section .proficient h3:after,
+	.legend .proficient:after {
+		content: ' \2713\2713\2713';
+		font-size: 0.8em;
+	}
+	.section .intermediate h3:after,
+	.legend .intermediate:after {
+		content: ' \2713\2713';
+		font-size: 0.8em;
+	}
+	.section .novice h3:after,
+	.legend .novice:after {
+		content: ' \2713';
+		font-size: 0.8em;
+	}
+
 #portfolio {
 }
 	#portfolio .section span:before {
