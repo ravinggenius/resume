@@ -1,0 +1,43 @@
+.section {
+	border-left: none;
+	border-right: none;
+	border-bottom: none;
+}
+
+	.legend,
+	.legend * {
+		display: none !important;
+	}
+
+	.section h2,
+	.section h3 {
+	}
+	.section span {
+	}
+	.section .description {
+	}
+
+.section .section {
+	min-height: 0;
+}
+
+#branding {
+}
+
+#contact {
+}
+
+#about {
+}
+
+#languages {
+}
+
+#portfolio {
+}
+
+#experience {
+}
+
+#interests {
+}

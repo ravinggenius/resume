@@ -1,0 +1,57 @@
+.section {
+	border: #999999 0.025em solid;
+}
+
+	.legend {
+	}
+		.legend ul {
+		}
+			.legend ul li {
+				border: #999999 0.025em solid;
+			}
+
+	.section h2,
+	.section h3 {
+	}
+	.section span {
+		/* background-color: #ffff00; */
+	}
+	.section .description {
+	}
+
+	.section .master {
+		background-color: #ddddff;
+	}
+	.section .fluent {
+		background-color: #ddffdd;
+	}
+	.section .proficient {
+		background-color: #ffffdd;
+	}
+	.section .intermediate {
+		background-color: #ddffff;
+	}
+	.section .novice {
+		background-color: #ffffff;
+	}
+
+#branding {
+}
+
+#contact {
+}
+
+#about {
+}
+
+#languages {
+}
+
+#portfolio {
+}
+
+#experience {
+}
+
+#interests {
+}
