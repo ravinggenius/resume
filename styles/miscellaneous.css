@@ -39,27 +39,27 @@ a[href^='ssh']:after {
 	.section .master h3:after,
 	.legend .master:after {
 		content: ' \2713\2713\2713\2713\2713';
-		font-size: 0.8em;
+		font-size: 0.9em;
 	}
 	.section .fluent h3:after,
 	.legend .fluent:after {
 		content: ' \2713\2713\2713\2713';
-		font-size: 0.8em;
+		font-size: 0.9em;
 	}
 	.section .proficient h3:after,
 	.legend .proficient:after {
 		content: ' \2713\2713\2713';
-		font-size: 0.8em;
+		font-size: 0.9em;
 	}
 	.section .intermediate h3:after,
 	.legend .intermediate:after {
 		content: ' \2713\2713';
-		font-size: 0.8em;
+		font-size: 0.9em;
 	}
 	.section .novice h3:after,
 	.legend .novice:after {
 		content: ' \2713';
-		font-size: 0.8em;
+		font-size: 0.9em;
 	}
 
 #portfolio {

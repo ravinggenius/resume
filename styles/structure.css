@@ -13,10 +13,11 @@
 				padding: 0.25em;
 			}
 
-	.section h2,
-	.section h3 {
+	.section > * {
+		padding: 0.25em;
 	}
 	.section span {
+		display: block;
 	}
 	.section .description {
 	}

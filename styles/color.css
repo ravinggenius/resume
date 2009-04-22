@@ -2,6 +2,10 @@ body {
 	background-color: #6699aa;
 }
 
+a {
+	color: #000066;
+}
+
 .section {
 	background-color: #ddeeff;
 	border: #999999 0.025em solid;
