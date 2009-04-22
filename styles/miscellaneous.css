@@ -38,7 +38,7 @@ a[href^='ssh']:after {
 
 	.section .master h3:after,
 	.legend .master:after {
-		content: ' \2713\2713\2713\2713';
+		content: ' \2713\2713\2713\2713\2713';
 		font-size: 0.8em;
 	}
 	.section .fluent h3:after,

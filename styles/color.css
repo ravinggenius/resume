@@ -1,5 +1,14 @@
+body {
+	background-color: #6699aa;
+}
+
 .section {
+	background-color: #ddeeff;
 	border: #999999 0.025em solid;
+}
+
+.section .section {
+	background-color: #ffffff;
 }
 
 	.legend {
@@ -12,6 +21,7 @@
 
 	.section h2,
 	.section h3 {
+		background-color: #dddddd;
 	}
 	.section span {
 		/* background-color: #ffff00; */
@@ -20,19 +30,14 @@
 	}
 
 	.section .master {
-		background-color: #ddddff;
 	}
 	.section .fluent {
-		background-color: #ddffdd;
 	}
 	.section .proficient {
-		background-color: #ffffdd;
 	}
 	.section .intermediate {
-		background-color: #ddffff;
 	}
 	.section .novice {
-		background-color: #ffffff;
 	}
 
 #branding {
