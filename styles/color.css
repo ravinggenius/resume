@@ -1,18 +1,20 @@
 body {
-	background-color: #6699aa;
+	background-color: #1f1f1f;
+	color: #000000;
 }
 
 a {
-	color: #000066;
+	color: #1f1f1f;
 }
 
 .section {
-	background-color: #ddeeff;
+	background-color: #797979;
 	border: #999999 0.025em solid;
 }
 
 .section .section {
 	background-color: #ffffff;
+	color: #1f1f1f;
 }
 
 	.legend {
@@ -25,7 +27,7 @@ a {
 
 	.section h2,
 	.section h3 {
-		background-color: #dddddd;
+		background-color: #cacaca;
 	}
 	.section span {
 		/* background-color: #ffff00; */
