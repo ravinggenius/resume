@@ -27,3 +27,11 @@ a:visited {
 	text-decoration: linethrough;
 }
 
+dl {
+}
+	dt {
+	}
+	dd {
+		margin-left: 1em;
+	}
+
