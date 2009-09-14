@@ -31,6 +31,9 @@ a[href^='ssh']:after {
 	.section h2,
 	.section h3 {
 	}
+	.section h3 {
+		cursor: pointer;
+	}
 	.section span {
 	}
 	.section .description {
@@ -67,4 +70,3 @@ a[href^='ssh']:after {
 	#portfolio .section span:before {
 		content: 'Status: ';
 	}
-
