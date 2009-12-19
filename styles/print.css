@@ -1,7 +1,12 @@
+.web_only {
+	display: none !important;
+}
+
 .section {
 	border-left: none;
 	border-right: none;
 	border-bottom: none;
+	page-break-inside: avoid !important;
 }
 
 	.legend,
@@ -18,7 +23,8 @@
 	}
 
 .section .section {
-	min-height: 0;
+	height: auto;
+	width: 29.5%;
 }
 
 #branding {
