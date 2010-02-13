@@ -1,6 +1,6 @@
-$(function () {
-  $('.section .section').draggable({
-    handle: 'h3',
+$(document).ready(function () {
+  $('section article').draggable({
+    handle: 'header',
     opacity: 0.65,
     revert: true,
     revertDuration: 500,

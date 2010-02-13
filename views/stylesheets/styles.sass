@@ -13,19 +13,13 @@ a:visited
 
 h1
   font-size: 1.75em
-h2
-  font-size: 1.5em
-h3
-  font-size: 1.25em
-h4
-  font-size: 1em
 
 dl
   dt
   dd
     margin-left: 1em
 
-.section
+section
   background-color: #797979
   border: #999999 0.025em solid
   margin: 0.5em
@@ -34,21 +28,33 @@ dl
   > *
     padding: 0.25em
 
-  .section
-    display: inline-block
-    background-color: #FFFFFF
-    color: #1F1F1F
-    width: 15em
-    min-height: 10em
-    vertical-align: top
-
-  h2,
-  h3
+  header
     background-color: #CACACA
-  h3
-    cursor: pointer
-  h3:after
+  section
+    header
+      cursor: pointer
+  header:after
     font-size: 0.9em
+  .master header:after
+    content: ' \2713\2713\2713\2713\2713'
+  .fluent header:after
+    content: ' \2713\2713\2713\2713'
+  .proficient header:after
+    content: ' \2713\2713\2713'
+  .intermediate header:after
+    content: ' \2713\2713'
+  .novice header:after
+    content: ' \2713'
+
+  section
+    section
+      display: inline-block
+      background-color: #FFFFFF
+      color: #1F1F1F
+      width: 15em
+      min-height: 10em
+      vertical-align: top
+
   span
     display: block
 
@@ -59,21 +65,6 @@ dl
         margin: 0.25em
         padding: 0.25em
 
-  .master h3:after
-    content: ' \2713\2713\2713\2713\2713'
-
-  .fluent h3:after
-    content: ' \2713\2713\2713\2713'
-
-  .proficient h3:after
-    content: ' \2713\2713\2713'
-
-  .intermediate h3:after
-    content: ' \2713\2713'
-
-  .novice h3:after
-    content: ' \2713'
-
 #portfolio
-  .section span:before
+  section span:before
     content: 'Status: '

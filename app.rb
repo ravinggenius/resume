@@ -8,11 +8,9 @@ get '/' do
   haml :index
 end
 
-[ :application, :print ].each do |type|
-  get "/styles/#{type}.css" do
-    content_type :css
-    sass type
-  end
+get '/styles/:name.css' do
+  content_type :css
+  sass :"stylesheets/#{params[:name]}"
 end
 
 not_found do
