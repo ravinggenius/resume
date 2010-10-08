@@ -1,237 +1,108 @@
-!!! XML
-!!!
-%html{ :lang => 'en', :xmlns => 'http://www.w3.org/1999/xhtml', 'xml:lang' => 'en'}
-  %head
-    %title Resume | Raving Genius
+%article
+  %header
+    %span.h Professional Summary
 
-    / Meta
-    %meta{ 'http-equiv' => 'Content-Type', 'content' => 'text/html; charset=utf-8' }
+  %section
+    %ul
+      %li Self-taught programmer with strong desire to learn
+      %li Webmaster for many sites (some built from scratch and some CMS-based)
+      %li Strong sense of object-oriented programming
+      %li MVC (Rails, Sinatra, Merb, ASP.NET MVC)
+      %li GNU|Linux evangelist and Open Source advocate
+      %li Well-developed analytical skills
+      %li Have worked with large datasets (1.5M to 2M records)
+      %li Attend trade meetings and conferences regularly
+      %li Have configured systems and networks professionally and personally
+      %li Technical advisor to several people
 
-    / FavIcon
-    %link{ :rel => 'shortcut icon', :href => '' }
+%article
+  %header
+    %span.h Technical Summary
 
-    / CSS
-    %style{ :type => 'text/css', :media => 'all'} @import url('http://assets.ravinggenius.com/css?html5reset=1.4');
-    %style{ :type => 'text/css', :media => 'all'} @import url('/styles/application.css');
-    %style{ :type => 'text/css', :media => 'print'} @import url('/styles/print.css');
+  %section
+    %dl
+      %dt Languages
+      %dd HTML (4, 5), CSS (2, 2.1, 3), Ruby (1.8, 1.9), JavaScript | JSON, PHP (4, 5), C# (2, 3), VB (2, 3), ASP.NET (2, 3, 3.5), XML, ColdFusion, Flex | AS3, VBA
+    %dl
+      %dt Databases
+      %dd SQLite, MySQL, MSSQL
+    %dl
+      %dt Code Samples
+      %dd <a href="http://github.com/ravinggenius">github.com/ravinggenius</a>
+    %dl
+      %dt Other
+      %dd git, SVN, REST, text editor, VIM, Regular Expressions, Visual Studio (2005, 2008), Drupal (4.7, 5, 6), SharePoint 2007, Joomla! (1.1, 1.5)
+    %dl
+      %dt Future Interests
+      %dd Agile, TDD, LISP, C++, NoSQL (especially MongoDB), Pair Programming, PostgreSQL, Graphic Design, Java (maybe), The Next Big Thing
 
-    / JavaScript
-    %script{ :type => 'text/javascript', :src => 'http://assets.ravinggenius.com/js?jquery=1.4' }
-    %script{ :type => 'text/javascript', :src => '/scripts/application.js' }
+%article
+  %header
+    %span.h Professional Experience
 
-    :javascript
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-13210830-3']);
-      _gaq.push(['_trackPageview']);
+  %section
+    %header
+      %span.h яandomByDesign; Freelancer | Owner; Apex, NC; 03/2008 - present
+    %section
+      %ul
+        %li Created a church <span class="keyword">CMS</span>-backed website for a friend <span class="keyword">Drupal</span>, <span class="keyword">PHP</span>, <span class="keyword">MySQL</span>
+        %li Hand-crafted several websites for friends and family <span class="keyword">Ruby</span>, <span class="keyword">Sinatra</span>, <span class="keyword">HTML</span>, <span class="keyword">CSS</span>, <span class="keyword">JavaScript</span>
 
-      (function () {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript';
-        ga.async = true;
-        ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
-      })();
+  %section
+    %header
+      %span.h CISYS | Life Sciences; Web Developer; N Raleigh, NC; 10/2007 - 03/2010
+    %section
+      %ul
+        %li Built a <span class="keyword">SharePoint</span>-backed IRB system from scratch with custom secure login <span class="keyword">C#</span>, <span class="keyword">HTML</span>, <span class="keyword">CSS</span>, <span class="keyword">JavaScript</span>
+        %li Built a flexible <span class="keyword">ORM</span> for interacting with <span class="keyword">SharePoint</span>'s database (inspired by <span class="keyword">Ruby</span>'s <span class="keyword">DataMapper</span>)
+        %li Created many helper classes, including an <span class="keyword">HTML</span>-generation library
+        %li Created several websites, primarily using <span class="keyword">ASP.NET technologies</span>, including <a href="http://www.cisys.com/">CISYS</a>'. <span class="keyword">HTML</span>, <span class="keyword">CSS</span>, <span class="keyword">JavaScript</span>, <span class="keyword">AJAX</span>, <span class="keyword">C#</span>, <span class="keyword">VB.NET</span>, <span class="keyword">PHP</span>
+        %li Advocated improved development methodologies, such as <span class="keyword">test-driven development</span>
+        %li Contracted with partner/vendor, Presentation Strategies
+        %li Supported existing reporting projects <span class="keyword">MSSQL</span>, <span class="keyword">XML</span>, <span class="keyword">VBA</span>
+        %li Updated and maintained some websites <span class="keyword">PHP</span>, <span class="keyword">HTML</span>, <span class="keyword">CSS</span>, <span class="keyword">MSSQL</span>, <span class="keyword">MySQL</span>
 
-  %body
-    %header{ :id => 'branding' }
-      %h1 Raving Genius [Thomas Ingram]
-      %span foaming at the brain
+  %section
+    %header
+      %span.h Sir Speedy Cary; Mail Room Supervisor | Web Developer; Cary, NC; 09/2005 - 10/2007
+    %section
+      %ul
+        %li Built an online ordering system for our largest client to replace the old one <span class="keyword">PHP</span>, <span class="keyword">HTML</span>, <span class="keyword">CSS</span>, <span class="keyword">MySQL</span>
+        %li Address and prepare letters and postcards for bulk mail
+        %li Cut paper, run deliveries, collate, hole punch and make computer recommendations
 
-    %section{ :id => 'contact' }
-      %header Contact
+%article
+  %header
+    %span.h Education
 
-      %section
-        %address{ :class => 'street' } Apex, NC 27502
-        %address{ :class => 'email' }
-          %a{ :href => 'mailto:rg+hireme@ravinggenius.com' } rg+hireme@ravinggenius.com
-        %span{ :class => 'phone_number' } 919 449.6305
+  %section
+    %header
+      %span.h Sandhills Community College; Pinehurst, NC; 2001 spring
+    %section
+      %ul
+        %li Accrued some basic credits
+        %li Left after a semester because of finances
 
-    %section{ :id => 'about' }
-      %header About Me
+  %section
+    %header
+      %span.h Pensacola Christian College; Pensacola, FL; 2000 spring
+    %section
+      %ul
+        %li Computer Science major
+        %li Left after a semester because of stringent rules
 
-      %section
-        %p I have always been fascinated with programming, looking for an opportunity to build a career with this passion. In the mean time, I have deployed several websites using open source web frameworks for friends and family, and even written programs for my graphing calculator. I have always tried to keep myself informed on the latest technologies. For the past several years I have run various GNU/Linux distributions, in addition to supporting and troubleshooting Windows. I have system and network configuration experience (both personal and professional), and I am the first person many of my friends and coworkers turn to when faced with a computer challenge, be it Windows-related, software issues or hardware configuration.
+  %section
+    %header
+      %span.h Calvary Christian School; Southern Pines, NC; 1995 - 1999
+    %section
+      %ul
+        %li Chose electives that focused on Math, Physics and Logic
 
-    %section{ :id => 'languages' }
-      %header Geek Speak
+%article
+  %header
+    %span.h Certifications
 
-      %article{ :class => 'fluent' }
-        %header XHTML | CSS
-
-        %section
-          %p{ :class => 'description' } Can quickly and easily create well-structured, <em>semantic</em>  markup with a commanding use of the good tags.
-          %p{ :class => 'description' } Though I am no graphic designer, I am fully capable of executing other people's layouts. I have become the reference guide for any questions about valid XHTML and CSS.
-
-      %article{ :class => 'fluent' }
-        %header C# | Visual Basic | .NET
-
-        %section
-          %p{ :class => 'description' } I have been using C# and VB.NET for two years (mostly C#). During that time I have pushed myself to learn more and have become quite proficient developing with C# and .NET in general.
-
-      %article{ :class => 'proficient' }
-        %header Ruby
-
-        %section
-          %p{ :class => 'description' } Recently started learning this. I have been working on some projects, mostly with Rails, and I have more planned. Ruby is such an elegant and expressive language, I would like for it to be my primary breadwinner. I have direct experience with Rails, Merb and Sinatra.
-
-      %article{ :class => 'proficient' }
-        %header JavaScript
-
-        %section
-          %p{ :class => 'description' } jQuery has really introduced me to JavaScript. I wasn't much interested in JavaScript until recently when I had a real need for it. Now I am going through a book to learn more.
-
-      %article{ :class => 'proficient' }
-        %header SQL
-
-        %section
-          %p{ :class => 'description' } Very comfortable with the basics, such as designing normalized tables and selecting exactly the data I need. I have some experience with more advanced features like stored procedures. Experienced with MySQL, MSSQL and Sqlite.
-
-      %article{ :class => 'fluent' }
-        %header PHP
-
-        %section
-          %p{ :class => 'description' } Cut my Object-Oriented teeth on PHP. Now I can do anything with it that is required. I coded a nice MVC framework for work with PHP, but it never got used.
-
-    %section{ :id => 'portfolio' }
-      %header Portfolio
-
-      %article
-        %header
-          %a{ :href => 'http://www.cisys.com/' } CISYS | Life Sciences
-
-        %section
-          %span released
-
-          %ul
-            %li ASP.NET
-            %li C#
-            %li JavaScript (jQuery)
-            %li CSS
-            %li XHTML
-          %p{ :class => 'description' } The current design was done by an outside consultant. When I was given responsibility to maintain it, I streamlined the markup, solidified the styles and ported the existing (multiple) flavors of JavaScript to jQuery.
-
-      %article
-        %header
-          %a{ :href => 'http://www.avoslifesciences.com/' } Avos Life Sciences
-
-        %section
-          %span released
-
-          %ul
-            %li CSS
-            %li XHTML
-            %li PHP
-          %p{ :class => 'description' } When I started work on this site, it was a tangled mess of Dreamweaver-generated spaghetti code and no external style sheets. I converted it to (almost) valid, semantic markup and extracted the styles into separate files. Also hooked into a third-party payment service.
-
-      %article
-        %header
-          %a{ :href => 'http://www.305online.net/' } 305 Entertainment and Recordings
-
-        %section
-          %span nearly finished
-
-          %ul
-            %li CSS
-            %li XHTML
-            %li MySQL
-            %li Ruby on Rails
-          %p{ :class => 'description' } A simple website for a friend. This site has a simple contact form for bookings and an artist listing.
-
-      %article
-        %header
-          %a{ :href => 'http://allergan.pstrat.com/' } Allergan iN-Form Portal
-
-        %section
-          %span released
-
-          %ul
-            %li CSS
-            %li XHTML
-            %li ASP.NET
-            %li VB
-          %p{ :class => 'description' } This project started out as a set of complex Photoshop mockups. I was the only person at my company and our client company who was able to actually implement the design with clean markup and style sheets.
-
-      %article
-        %header
-          %a{ :href => 'http://www.ccfuquay.com/' } CCFuquay
-
-        %section
-          %span released
-
-          %ul
-            %li Drupal (plus modules)
-          %p{ :class => 'description' } A friend is doing a church plant in Fuquay-Varina, so I put together a basic site using Drupal and off-the-shelf modules.
-
-      %article
-        %header Novartis eCatalog
-
-        %section
-          %span discontinued
-
-          %ul
-            %li PHP
-            %li MySQL
-            %li CSS
-            %li XHTML
-          %p{ :class => 'description' } This was an ordering system for a previous employer to aid with fulfillment with their largest client. The client has moved headquarters, and consequently this site is no longer needed.
-
-    %section{ :id => 'experience' }
-      %header Work Experience
-
-      %article
-        %header CISYS: Developer
-
-        %section
-          %span 2007.10 - present
-          %p{ :class => 'description' } I have worked on many projects while at Cisys, most of which are for large enterprise-level clients. As the resident web standards guru, I am the go-to guy for all things CSS and HTML. Most of the products I have built have been non-public, client-specific, but some of the public sites are highlighted above. Lately I have been working on a SharePoint based service application. I design and build (normalized) databases and high-quality web applications.
-
-      %article
-        %header Presentation Strategies: Developer
-
-        %section
-          %span 2007.11 - 2008.11
-          %p{ :class => 'description' } Shortly after Cisys hired me, they contracted me to a partner/vendor. My time at PStrat was spent supporting existing projects and building new products. Most things I worked on were internal or had set expiration dates.
-
-      %article
-        %header Sir Speedy Cary: Mail Room Supervisor
-
-        %section
-          %span 2005.09 - 2007.10
-          %p{ :class => 'description' } Address and prepare letters and postcards for bulk mail. Cut paper, run deliveries, collate, hole punch and make computer recommendations. Built a database-driven web application using PHP for one of our larger clients. (See Novartis eCatalog above.) Extra features and polish were left undone due to time and budget constraints.
-
-    %section{ :id => 'interests' }
-      %header Other
-
-      %article
-        %header Honorable Mentions
-
-        %section
-          %ul
-            %li Flex | AS3
-            %li ASP.NET
-            %li XML
-            %li VBA
-            %li ColdFusion
-            %li SharePoint
-
-      %article
-        %header Future Interests
-
-        %section
-          %ul
-            %li Adobe AIR
-            %li Graphic Design
-
-      %article
-        %header Future Projects
-
-        %section
-          %dl
-            %dt ScratchPad
-            %dd I have some ambitious plans for a custom content management system, but I'm still thinking about how I want it to work.
-            %dt DataMapper plugin
-            %dd For use in ScratchPad
-
-    %script{ :type => 'text/javascript', :src => '//static.woopra.com/js/woopra.v2.js' }
-    :javascript
-      woopraTracker.track();
+  %section
+    %ul
+      %li Computer Troubleshooting; Wake Technical Community College; 2006
+      %li MySQL; Wake Technical Community College; 2005
