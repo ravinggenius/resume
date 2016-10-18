@@ -1,23 +1,7 @@
-source :rubygems
+source 'https://rubygems.org'
 
-gem 'compass',               '~> 0.10'
-gem 'haml',                  '~> 3'
-gem 'i18n'
-gem 'pony',                  '~> 1'
-gem 'sinatra',               '~> 1'
-
-group :development do
-  gem 'awesome_print'
-  gem 'hirb'
-  gem 'ruby-debug'
-end
-
-group :production do
-  gem 'pg'
-  gem 'thin'
-end
-
-group :test do
-  gem 'json'
-  gem 'shoulda'
-end
+gem 'bootstrap-sass'
+gem 'middleman', '>= 4.0.0'
+gem 'middleman-livereload'
+gem 'tzinfo-data', platforms: [ :mswin, :mingw, :jruby ]
+gem 'wdm', '~> 0.1.0', platforms: [ :mswin, :mingw ]

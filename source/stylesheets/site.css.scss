@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+@import "bootstrap";
+
+body {
+	font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin: 0 auto;
+
+	@media screen {
+		width: 8.5in;
+	}
+}
+
+.branding {
+	.contact {
+		text-align: right;
+	}
+
+	address {
+		margin-bottom: auto;
+	}
+
+	a[href]::after {
+		@media print {
+			content: '';
+		}
+	}
+}
+
+.segment {
+	h2 {
+		text-align: right;
+	}
+
+	.content {
+		h3 {
+			small {
+				white-space: nowrap;
+			}
+		}
+	}
+}
+
+.keyword {
+	display: inline-block;
+	padding: 0 0.5ch;
+
+	&:first-of-type {
+		padding-left: 0;
+	}
+}
