@@ -3,66 +3,49 @@
 @import "bootstrap";
 
 body {
-  background: #ECC561;
-  text-align: center;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1em;
+	font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin: 0 auto;
+
+	@media screen {
+		width: 8.5in;
+	}
 }
 
-.logo img {
-  height: 18.75em;
-  margin-top: 6em;
+.branding {
+	.contact {
+		text-align: right;
+	}
+
+	address {
+		margin-bottom: auto;
+	}
+
+	a[href]::after {
+		@media print {
+			content: '';
+		}
+	}
 }
 
-h1 {
-  color: rgba(0,0,0,0.5);
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.8em;
-  font-weight: 400;
-  margin: 0;
+.segment {
+	h2 {
+		text-align: right;
+	}
+
+	.content {
+		h3 {
+			small {
+				white-space: nowrap;
+			}
+		}
+	}
 }
 
-.doc {
-  margin: 3em 0;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.1em;
-  font-weight: 300;
+.keyword {
+	display: inline-block;
+	padding: 0 0.5ch;
 
-  a {
-    border: 1px solid white;
-    border-radius: 3px;
-    padding: 0.75em 0.7em;
-    color: white;
-    text-decoration: none;
-    transition: color 0.1s linear;
-    &:hover {
-      background: rgba(0,0,0,0.2);
-      color: white;
-      transition: all 0.15s linear;
-    }
-  }
-}
-
-.welcome {
-  -webkit-animation-name: welcome;
-  -webkit-animation-duration: .9s;
-}
-
-@-webkit-keyframes welcome {
-  from {
-    -webkit-transform: scale(0);
-    opacity: 0;
-  }
-  50% {
-   -webkit-transform: scale(0);
-   opacity: 0;
-  }
-  82.5% {
-    -webkit-transform: scale(1.03);
-    -webkit-animation-timing-function: ease-out;
-    opacity: 1;
-  }
-  to {
-    -webkit-transform: scale(1);
-  }
+	&:first-of-type {
+		padding-left: 0;
+	}
 }

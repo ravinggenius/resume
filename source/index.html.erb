@@ -1,13 +1,90 @@
----
-title: Welcome to Middleman
----
+<header class="container-auto segment branding">
+	<div class="row">
+		<div class="col-xs-8">
+			<h1>Thomas Ingram <small>Senior Problem Solver</small></h1>
+			
+		</div>
 
-<div class="welcome">
-  <div class="logo">
-    <%= image_tag "middleman-logo.svg" %>
-  </div>
-  <h1>Middleman is Running</h1>
-  <p class="doc">
-    <%= link_to "Read Documentation Online", "https://middlemanapp.com", target: "_blank" %>
-  </p><!-- .doc -->
-</div><!-- .welcome -->
+		<div class="col-xs-4">
+			<section class="contact">
+				<address>Apex, NC 27502</address>
+				<%= mail_to 'rg+hireme@ravinggenius.com' %><br />
+				<%= link_to '919 449.6305', 'tel:+19194496305' %><br />
+				<%= link_to 'http://blog.ravinggenius.com/', 'http://blog.ravinggenius.com/' %>
+			</section>
+		</div>
+	</div>
+</header>
+
+<article class="container-auto segment profile">
+	<div class="row">
+		<div class="col-xs-3">
+			<h2>Profile</h2>
+		</div>
+
+		<div class="col-xs-9">
+			<section class="content keyword-group">
+				<header><h3></h3></header>
+
+				<section>
+					<p>I am a self-taught web developer. I build, contribute to and maintain open source projects. My work is hosted on <%= link_to 'GitHub', 'https://github.com/ravinggenius' %>.</p>
+				</section>
+			</section>
+		</div>
+	</div>
+</article>
+
+<article class="container-auto segment keywords">
+	<div class="row">
+		<div class="col-xs-3">
+			<h2>Skills</h2>
+		</div>
+
+		<div class="col-xs-9">
+			<% data.taxonomy.each do |group_name, keywords| %>
+				<section class="content keyword-group">
+					<header>
+						<h3><%= group_name %></h3>
+					</header>
+
+					<section>
+						<% keywords.each do |word| %>
+							<span class="keyword"><%= word %></span>
+						<% end %>
+					</section>
+				</section>
+			<% end %>
+		</div>
+	</div>
+</article>
+
+<article class="container-auto segment experience">
+	<div class="row">
+		<div class="col-xs-3">
+			<h2>Experience</h2>
+		</div>
+
+		<div class="col-xs-9">
+			<% data.experiences.reject(&:hidden).each do |job| %>
+				<section class="content job">
+					<header>
+						<h3>
+							<%= job.company %>
+							<small><%= job.title %></small>
+							<br />
+							<small>
+								<time datetime="<%= job.started_at.iso8601 %>"><%= job.started_at.strftime('%B %Y') %></time>
+								&nbsp;-&nbsp;
+								<time datetime="<%= job.stopped_at.try(:iso8601) %>"><%= job.stopped_at.try(:strftime, '%B %Y') || :present %></time>
+							</small>
+						</h3>
+					</header>
+
+					<section>
+						<p><%= job.summary %></p>
+					</section>
+				</section>
+			<% end %>
+		</div>
+	</div>
+</article>
