@@ -1,5 +1,6 @@
 ---
 Current:
+  - API
   - Ruby
   - git
   - VIM
@@ -14,8 +15,10 @@ Current:
   - REST
   - SQL
   - OOP
+  - MVWhatever
 
 Previous:
+  - SOAP
   - Elixir
   - Pair Programming
   - C#
