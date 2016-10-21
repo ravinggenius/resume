@@ -4,7 +4,7 @@
   location: Chapel Hill, NC
   started_at: 2015-04-01
   stopped_at: 2016-10-06
-  summary: Added a contact sharing feature for native Android app. Worked on custom-built CMS/API. Built in-house tooling for submitting apps to Apple's App Store and Google's Play Store. Streamlined and implemented many integration projects to pull client data from various third-parties.
+  summary: Added a contact sharing feature for native Android app. Worked on custom-built CMS/API. Built in-house tooling for submitting apps to Apple's App Store and Google's Play Store. Streamlined and implemented many integration projects to pull client data from various third-party REST and SOAP APIs.
 
 - company: RoleModel Software
   title: Web Developer
