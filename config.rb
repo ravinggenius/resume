@@ -44,3 +44,15 @@ configure :build do
   # Minify Javascript on build
   # activate :minify_javascript
 end
+
+require 'tomlrb'
+
+secrets = Tomlrb.load_file('./private.toml')
+
+activate :deploy do |deploy|
+  deploy.deploy_method = :sftp
+  deploy.host = secrets['deploy']['host']
+  deploy.port = secrets['deploy']['port']
+  deploy.path = secrets['deploy']['path']
+  deploy.user = secrets['deploy']['user']
+end
