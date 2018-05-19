@@ -1,0 +1,22 @@
+{
+  "name": "resume",
+  "description": "Personal résumé built with Gatsby",
+  "version": "1.0.0",
+  "author": "Thomas Ingram",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write 'src/**/*.js'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "gatsby": "^1.x.x",
+    "gatsby-link": "^1.x.x",
+    "gatsby-plugin-react-helmet": "^2.x.x",
+    "react-helmet": "^5.x.x"
+  },
+  "devDependencies": {
+    "prettier": "^1.x.x"
+  }
+}

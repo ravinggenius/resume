@@ -6,19 +6,15 @@ end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[*.{rb,ru}]
+[*.{js,jsx}]
+indent_style = tab
+indent_size = 4
+
+[*.md]
 indent_style = space
 indent_size = 2
 
-[*.erb]
-indent_style = tab
-indent_size = 4
-
-[*.js]
-indent_style = tab
-indent_size = 4
-
-[*.scss]
+[*.css]
 indent_style = tab
 indent_size = 4
 
