@@ -1,5 +1,11 @@
 import Link from 'gatsby-link';
 import React from 'react';
+import styled from 'react-emotion';
+
+const StyledLink = styled(Link)`
+	color: white;
+	text-decoration: none;
+`;
 
 const Header = ({ siteTitle }) => (
 	<div
@@ -16,15 +22,7 @@ const Header = ({ siteTitle }) => (
 			}}
 		>
 			<h1 style={{ margin: 0 }}>
-				<Link
-					to="/"
-					style={{
-						color: 'white',
-						textDecoration: 'none'
-					}}
-				>
-					{siteTitle}
-				</Link>
+				<StyledLink to="/">{siteTitle}</StyledLink>
 			</h1>
 		</div>
 	</div>

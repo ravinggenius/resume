@@ -11,9 +11,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "emotion": "^9.x.x",
+    "emotion-server": "^9.x.x",
     "gatsby": "^1.x.x",
     "gatsby-link": "^1.x.x",
+    "gatsby-plugin-emotion": "^1.x.x",
     "gatsby-plugin-react-helmet": "^2.x.x",
+    "react-emotion": "^9.x.x",
     "react-helmet": "^5.x.x"
   },
   "devDependencies": {
