@@ -1,0 +1,25 @@
+---
+name: Acme, Inc
+title: Web Developer
+startedAt: 2010-01-01
+stoppedAt: 2010-12-31
+salary: 100_000_00
+salaryPeriod: year
+phone: 333 555.9876
+
+address:
+  street: 123 Main Street
+  city: Fake
+  state: ST
+  postal: "54321"
+
+keywords:
+  - CSS
+  - HTML
+  - JavaScript
+
+summary: |2
+  One paragraph to briefly describe what you did at the company.
+---
+
+Details about significant projects and contributions you made while working at Acme. Copy this file and fill in details for three or four companies.
