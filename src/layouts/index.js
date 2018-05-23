@@ -4,8 +4,6 @@ import Helmet from 'react-helmet';
 
 import 'normalize.css';
 
-import Header from '../components/header';
-
 const Layout = ({ children, data }) => (
 	<div>
 		<Helmet
@@ -15,17 +13,8 @@ const Layout = ({ children, data }) => (
 			]}
 			title={data.site.siteMetadata.title}
 		/>
-		<Header siteTitle={data.site.siteMetadata.title} />
-		<div
-			style={{
-				margin: '0 auto',
-				maxWidth: 960,
-				padding: '0px 1.0875rem 1.45rem',
-				paddingTop: 0
-			}}
-		>
-			{children()}
-		</div>
+
+		{children()}
 	</div>
 );
 
