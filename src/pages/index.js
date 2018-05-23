@@ -4,15 +4,17 @@ import React from 'react';
 import CompanyCard from '../components/company_card';
 
 const IndexPage = ({ data }) => (
-	<div>
-		{data.allMarkdownRemark.edges.map(({ node }) => (
-			<CompanyCard
-				key={node.fields.slug}
-				{...node.fields}
-				{...node.frontmatter}
-			/>
-		))}
-	</div>
+	<main role="main">
+		<section>
+			{data.allMarkdownRemark.edges.map(({ node }) => (
+				<CompanyCard
+					key={node.fields.slug}
+					{...node.fields}
+					{...node.frontmatter}
+				/>
+			))}
+		</section>
+	</main>
 );
 
 export default IndexPage;
