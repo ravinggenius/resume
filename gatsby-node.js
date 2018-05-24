@@ -6,7 +6,9 @@ module.exports.createPages = ({ boundActionCreators, graphql }) => {
 
 	return graphql(`
 		{
-			allMarkdownRemark {
+			allMarkdownRemark(
+				filter: { frontmatter: { isPublished: { eq: true } } }
+			) {
 				edges {
 					node {
 						fields {

@@ -25,6 +25,7 @@ export default IndexPage;
 export const query = graphql`
 	query IndexQuery {
 		allMarkdownRemark(
+			filter: { frontmatter: { isPublished: { eq: true } } }
 			sort: { fields: [frontmatter___startedAt], order: DESC }
 		) {
 			edges {
