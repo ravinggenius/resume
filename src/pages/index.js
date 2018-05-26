@@ -12,8 +12,8 @@ const IndexPage = ({ data }) => (
 			{data.allMarkdownRemark.edges.map(({ node }) => (
 				<CompanyCard
 					key={node.fields.slug}
-					{...node.fields}
 					{...node.frontmatter}
+					summary={node.summary}
 				/>
 			))}
 		</section>
@@ -30,7 +30,6 @@ export const query = graphql`
 		) {
 			edges {
 				node {
-					excerpt
 					fields {
 						slug
 					}
@@ -41,8 +40,8 @@ export const query = graphql`
 						salaryInCents
 						salaryPeriod
 						keywords
-						summary
 					}
+					summary: html
 				}
 			}
 		}

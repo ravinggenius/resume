@@ -1,4 +1,3 @@
-import Link from 'gatsby-link';
 import React from 'react';
 import styled from 'react-emotion';
 
@@ -40,24 +39,19 @@ export default ({
 	name,
 	salary,
 	salaryPeriod,
-	slug,
 	startedAt,
 	stoppedAt,
 	summary
 }) => (
 	<Company>
 		<Facts>
-			<h3>
-				<Link to={slug}>{name}</Link>
-			</h3>
+			<h3>{name}</h3>
 
 			<KeywordList>
 				{keywords.map(word => <Keyword key={word}>{word}</Keyword>)}
 			</KeywordList>
 		</Facts>
 
-		<Summary>
-			<p>{summary}</p>
-		</Summary>
+		<Summary dangerouslySetInnerHTML={{ __html: summary }} />
 	</Company>
 );
