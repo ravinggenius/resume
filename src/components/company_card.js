@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'react-emotion';
 
+import DateRange from '../components/date_range';
+
 const Company = styled.article`
 	display: grid;
 	grid-gap: 3px;
@@ -46,6 +48,11 @@ export default ({
 	<Company>
 		<Facts>
 			<h3>{name}</h3>
+
+			<DateRange
+				start={startedAt.split('T')[0]}
+				stop={stoppedAt.split('T')[0]}
+			/>
 
 			<KeywordList>
 				{keywords.map(word => <Keyword key={word}>{word}</Keyword>)}

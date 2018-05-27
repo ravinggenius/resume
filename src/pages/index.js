@@ -39,6 +39,8 @@ export const query = graphql`
 						stoppedAt
 						salaryInCents
 						salaryPeriod
+						startedAt
+						stoppedAt
 						keywords
 					}
 					summary: html
