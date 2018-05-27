@@ -1,5 +1,0 @@
-[deploy]
-host = 'resume.example.com'
-port = 22
-path = '/home/user/public'
-user = 'application'
