@@ -8,6 +8,7 @@ const Company = styled.article`
 	grid-gap: 3px;
 	grid-template-areas: 'facts summary';
 	grid-template-columns: 1fr 1fr;
+	margin: 0.5em 0;
 `;
 
 const Facts = styled.header`
@@ -16,6 +17,14 @@ const Facts = styled.header`
 
 const Summary = styled.section`
 	grid-area: summary;
+`;
+
+const Name = styled.h3`
+	margin: 0;
+`;
+
+const Title = styled.span`
+	display: block;
 `;
 
 const KeywordList = styled.p`
@@ -43,11 +52,14 @@ export default ({
 	salaryPeriod,
 	startedAt,
 	stoppedAt,
-	summary
+	summary,
+	title
 }) => (
 	<Company>
 		<Facts>
-			<h3>{name}</h3>
+			<Name>{name}</Name>
+
+			<Title>{title}</Title>
 
 			<DateRange
 				start={startedAt.split('T')[0]}
