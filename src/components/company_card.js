@@ -27,26 +27,7 @@ const Title = styled.span`
 	display: block;
 `;
 
-const KeywordList = styled.p`
-	display: flex;
-	flex-wrap: wrap;
-`;
-
-const Keyword = styled.span`
-	display: inline-block;
-	margin: 2px 3px;
-
-	&:first-of-type {
-		margin-left: 0;
-	}
-
-	&:last-of-type {
-		margin-right: 0;
-	}
-`;
-
 export default ({
-	keywords,
 	name,
 	salary,
 	salaryPeriod,
@@ -65,10 +46,6 @@ export default ({
 				start={startedAt.split('T')[0]}
 				stop={stoppedAt.split('T')[0]}
 			/>
-
-			<KeywordList>
-				{keywords.map(word => <Keyword key={word}>{word}</Keyword>)}
-			</KeywordList>
 		</Facts>
 
 		<Summary dangerouslySetInnerHTML={{ __html: summary }} />
