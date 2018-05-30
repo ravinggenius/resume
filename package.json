@@ -19,7 +19,6 @@
     "gatsby-plugin-react-helmet": "^2.x.x",
     "gatsby-source-filesystem": "^1.x.x",
     "gatsby-transformer-remark": "^1.x.x",
-    "gatsby-transformer-toml": "^1.x.x",
     "luxon": "^1.2.1",
     "normalize.css": "^8.x.x",
     "react": "^16.x.x",

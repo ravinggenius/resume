@@ -7,11 +7,13 @@ import { weighByExperience } from '../utilities';
 
 const IndexPage = ({ data }) => (
 	<main role="main">
-		<ContactCard {...data.contactToml} />
+		<ContactCard {...data.contact.frontmatter} />
+
+		<section dangerouslySetInnerHTML={{ __html: data.contact.profile }} />
 
 		<WeightedKeywordList
 			keywords={weighByExperience(
-				data.allMarkdownRemark.edges.map(({ node }) => ({
+				data.companies.edges.map(({ node }) => ({
 					keywords: node.frontmatter.keywords,
 					startedAt: node.frontmatter.startedAt.split('T')[0],
 					stoppedAt: node.frontmatter.stoppedAt.split('T')[0]
@@ -20,7 +22,7 @@ const IndexPage = ({ data }) => (
 		/>
 
 		<section>
-			{data.allMarkdownRemark.edges.map(({ node }) => (
+			{data.companies.edges.map(({ node }) => (
 				<CompanyCard
 					key={node.fields.slug}
 					{...node.frontmatter}
@@ -35,7 +37,7 @@ export default IndexPage;
 
 export const query = graphql`
 	query IndexQuery {
-		allMarkdownRemark(
+		companies: allMarkdownRemark(
 			filter: { frontmatter: { isPublished: { eq: true } } }
 			sort: { fields: [frontmatter___startedAt], order: DESC }
 		) {
@@ -60,11 +62,16 @@ export const query = graphql`
 			}
 		}
 
-		contactToml {
-			name
-			phone
-			email
-			location
+		contact: markdownRemark(fields: { slug: { eq: "/contact" } }) {
+			frontmatter {
+				name
+				email
+				location
+				phone
+				title
+				website
+			}
+			profile: html
 		}
 	}
 `;
