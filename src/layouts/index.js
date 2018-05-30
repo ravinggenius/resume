@@ -4,6 +4,8 @@ import Helmet from 'react-helmet';
 
 import 'normalize.css';
 
+import './index.css';
+
 const Layout = ({ children, data }) => (
 	<div>
 		<Helmet

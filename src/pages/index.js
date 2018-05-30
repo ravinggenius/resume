@@ -2,6 +2,12 @@ import React from 'react';
 
 import ContactCard from '../components/contact_card';
 import CompanyCard from '../components/company_card';
+import Section, {
+	Body,
+	Header,
+	SectionLayout,
+	Title
+} from '../components/section';
 import WeightedKeywordList from '../components/weighted_keyword_list';
 import { weighByExperience } from '../utilities';
 
@@ -9,19 +15,27 @@ const IndexPage = ({ data }) => (
 	<main role="main">
 		<ContactCard {...data.contact.frontmatter} />
 
-		<section dangerouslySetInnerHTML={{ __html: data.contact.profile }} />
+		<SectionLayout>
+			<Header>
+				<Title>Profile</Title>
+			</Header>
 
-		<WeightedKeywordList
-			keywords={weighByExperience(
-				data.companies.edges.map(({ node }) => ({
-					keywords: node.frontmatter.keywords,
-					startedAt: node.frontmatter.startedAt.split('T')[0],
-					stoppedAt: node.frontmatter.stoppedAt.split('T')[0]
-				}))
-			)}
-		/>
+			<Body dangerouslySetInnerHTML={{ __html: data.contact.profile }} />
+		</SectionLayout>
 
-		<section>
+		<Section title="Skills/Tools">
+			<WeightedKeywordList
+				keywords={weighByExperience(
+					data.companies.edges.map(({ node }) => ({
+						keywords: node.frontmatter.keywords,
+						startedAt: node.frontmatter.startedAt.split('T')[0],
+						stoppedAt: node.frontmatter.stoppedAt.split('T')[0]
+					}))
+				)}
+			/>
+		</Section>
+
+		<Section title="Experience">
 			{data.companies.edges.map(({ node }) => (
 				<CompanyCard
 					key={node.fields.slug}
@@ -29,7 +43,7 @@ const IndexPage = ({ data }) => (
 					summary={node.summary}
 				/>
 			))}
-		</section>
+		</Section>
 	</main>
 );
 
