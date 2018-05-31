@@ -2,8 +2,8 @@ import { DateTime } from 'luxon';
 import React from 'react';
 import styled from 'react-emotion';
 
-const Time = styled.time`
-	display: block;
+export const Time = styled.time`
+	color: #777777;
 `;
 
 const DATE_FORMAT = 'MMMM yyyy';

@@ -9,8 +9,7 @@ module.exports = {
 				path: `${__dirname}/src/data`
 			}
 		},
-		'gatsby-transformer-remark',
-		'gatsby-transformer-toml'
+		'gatsby-transformer-remark'
 	],
 
 	siteMetadata: {

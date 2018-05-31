@@ -1,22 +1,57 @@
 import React from 'react';
 import styled from 'react-emotion';
 
-const Name = styled.h1``;
+import { Body, Header, SectionLayout } from './section';
 
-const Location = styled.address``;
+const Section = styled(SectionLayout)`
+	grid-template-columns: max-content 1fr;
 
-const Email = styled.address``;
+	${Header} {
+		text-align: end;
+	}
+`;
 
-const Phone = styled.address``;
+const Name = styled.h1`
+	grid-area: name;
+	margin: 0;
+	margin-right: 2ch;
+`;
 
-export default ({ email, location, name, phone }) => (
-	<section>
-		<Name>{name}</Name>
+const Title = styled.span`
+	color: #777777;
+	display: block;
+	grid-area: title;
+`;
 
-		<Location>{location}</Location>
+const Address = styled.address`
+	font-style: normal;
+	text-align: end;
+`;
 
-		<Email>{email}</Email>
+export default ({ email, location, name, phone, title, website }) => (
+	<Section>
+		<Header>
+			<Name>{name}</Name>
 
-		<Phone>{phone}</Phone>
-	</section>
+			<Title>{title}</Title>
+		</Header>
+
+		<Body>
+			<Address>{location}</Address>
+
+			<Address>
+				<a href={`mailto:${email}`}>{email}</a>
+			</Address>
+
+			<Address>
+				<a href={`tel:${phone.replace(/[ \.]/g, '')}`}>
+					{phone.replace('+1 ', '')}
+				</a>
+			</Address>
+
+			<Address>
+				<a href={website}>{website.replace(/^https?:\/\//, '')}</a>
+			</Address>
+		</Body>
+	</Section>
 );
