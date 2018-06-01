@@ -9,9 +9,6 @@ const Keyword = styled.span`
 `;
 
 const KeywordList = styled.p`
-	align-items: baseline;
-	display: flex;
-	flex-wrap: wrap;
 	margin-left: -0.75ch;
 `;
 
