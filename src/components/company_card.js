@@ -32,7 +32,7 @@ const Facts = styled.header`
 		grid-template-columns: max-content 1fr;
 	}
 
-	@media print, screen and (min-width: 520px) {
+	@media print, screen and (min-width: 550px) {
 		grid-template-areas: 'name title date';
 		grid-template-columns: max-content max-content 1fr;
 	}
