@@ -61,15 +61,11 @@ export const query = graphql`
 						slug
 					}
 					frontmatter {
+						keywords
 						name
 						startedAt
 						stoppedAt
-						salaryInCents
-						salaryPeriod
-						startedAt
-						stoppedAt
 						title
-						keywords
 					}
 					summary: html
 				}

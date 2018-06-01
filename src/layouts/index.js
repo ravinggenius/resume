@@ -10,10 +10,12 @@ const Layout = ({ children, data }) => (
 	<div>
 		<Helmet
 			meta={[
-				{ name: 'description', content: 'Sample' },
-				{ name: 'keywords', content: 'sample, something' }
+				{
+					name: 'description',
+					content: `Résumé of ${data.contact.frontmatter.name}`
+				}
 			]}
-			title={data.site.siteMetadata.title}
+			title={`Résumé | ${data.contact.frontmatter.name}`}
 		/>
 
 		{children()}
@@ -27,10 +29,10 @@ Layout.propTypes = {
 export default Layout;
 
 export const query = graphql`
-	query SiteTitleQuery {
-		site {
-			siteMetadata {
-				title
+	query SiteMetaQuery {
+		contact: markdownRemark(fields: { slug: { eq: "/contact" } }) {
+			frontmatter {
+				name
 			}
 		}
 	}
