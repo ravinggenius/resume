@@ -10,9 +10,5 @@ module.exports = {
 			}
 		},
 		'gatsby-transformer-remark'
-	],
-
-	siteMetadata: {
-		title: 'Thomas Ingram'
-	}
+	]
 };
