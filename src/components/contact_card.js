@@ -4,10 +4,23 @@ import styled from 'react-emotion';
 import { Body, Header, SectionLayout } from './section';
 
 const Section = styled(SectionLayout)`
-	grid-template-columns: max-content 1fr;
+	@media print, screen and (min-width: 520px) {
+		grid-template-areas: 'header body';
+		grid-template-columns: max-content 1fr;
+	}
+
+	${Body} {
+		@media print, screen and (min-width: 520px) {
+			text-align: end;
+		}
+	}
 
 	${Header} {
-		text-align: end;
+		writing-mode: unset;
+
+		@media print, screen and (min-width: 520px) {
+			text-align: end;
+		}
 	}
 `;
 
@@ -25,7 +38,6 @@ const Title = styled.span`
 
 const Address = styled.address`
 	font-style: normal;
-	text-align: end;
 `;
 
 export default ({ email, location, name, phone, title, website }) => (

@@ -19,13 +19,30 @@ const Facts = styled.header`
 	display: grid;
 	grid-area: facts;
 	grid-gap: 1ch;
-	grid-template-areas: 'name title date';
-	grid-template-columns: max-content max-content 1fr;
+	grid-template-areas:
+		'name'
+		'title'
+		'date';
 	margin-bottom: 0.5rem;
+
+	@media screen and (min-width: 400px) {
+		grid-template-areas:
+			'name name'
+			'title date';
+		grid-template-columns: max-content 1fr;
+	}
+
+	@media print, screen and (min-width: 550px) {
+		grid-template-areas: 'name title date';
+		grid-template-columns: max-content max-content 1fr;
+	}
 
 	${Time} {
 		grid-area: date;
-		justify-self: end;
+
+		@media print, screen and (min-width: 400px) {
+			justify-self: end;
+		}
 	}
 `;
 
