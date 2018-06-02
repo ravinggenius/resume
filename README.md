@@ -1,26 +1,16 @@
-# gatsby-starter-default
-The default Gatsby starter.
+## Gatsby Résumé
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/).
+Single-page static résumé site, built with [Gatsby](https://www.gatsbyjs.org/). Please fork and customize (or not). I do hope you find it helpful. Improvements are welcome!
 
-## Install
 
-Make sure that you have the Gatsby CLI program installed:
-```sh
-npm install --global gatsby-cli
-```
+### Getting Started
 
-And run from your CLI:
-```sh
-gatsby new gatsby-example-site
-```
+* Run `npm install`
+* Run `npm run develop` to start a hot-reloading development server
+* Copy `src/data/contact.md-sample` to `src/data/contact.md` and fill in with your details
+* Copy `src/data/companies/acme.md-sample` a few times and fill in work history (one company per file). One of the goals of this project is to fit on a single letter-sized page, so don't go overboard
 
-Then you can run it by:
-```sh
-cd gatsby-example-site
-npm run develop
-```
 
-## Deploy
+### Publish
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+Once you are happy with your résumé, run `npm run build` to compile all assets to `public`. Copy the `public` directory to your host and you're done!
