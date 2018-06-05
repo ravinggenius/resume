@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'react-emotion';
 
 import DateRange, { Time } from '../components/date_range';
+import { markdownExtra } from '../components/section';
 
 const Company = styled.article`
 	display: grid;
@@ -82,6 +83,9 @@ export default ({
 			/>
 		</Facts>
 
-		<Summary dangerouslySetInnerHTML={{ __html: summary }} />
+		<Summary
+			className={markdownExtra}
+			dangerouslySetInnerHTML={{ __html: summary }}
+		/>
 	</Company>
 );

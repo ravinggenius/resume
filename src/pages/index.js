@@ -6,7 +6,8 @@ import Section, {
 	Body,
 	Header,
 	SectionLayout,
-	Title
+	Title,
+	markdownExtra
 } from '../components/section';
 import WeightedKeywordList from '../components/weighted_keyword_list';
 import { weighByExperience } from '../utilities';
@@ -20,7 +21,10 @@ const IndexPage = ({ data }) => (
 				<Title>Profile</Title>
 			</Header>
 
-			<Body dangerouslySetInnerHTML={{ __html: data.contact.profile }} />
+			<Body
+				className={markdownExtra}
+				dangerouslySetInnerHTML={{ __html: data.contact.profile }}
+			/>
 		</SectionLayout>
 
 		<Section title="Skills/Tools">

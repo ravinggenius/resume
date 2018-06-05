@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'react-emotion';
+import styled, { css } from 'react-emotion';
 
 export const SectionLayout = styled.section`
 	display: grid;
@@ -38,6 +38,18 @@ export const Title = styled.h2`
 
 export const Body = styled.section`
 	grid-area: body;
+`;
+
+export const markdownExtra = css`
+	@media print {
+		a::before {
+			content: '[';
+		}
+
+		a::after {
+			content: '](' attr(href) ')';
+		}
+	}
 `;
 
 export default ({ children, title }) => (
