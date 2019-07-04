@@ -79,10 +79,7 @@ const CompanyCard = ({
 
 			<Title>{title}</Title>
 
-			<DateRange
-				start={startedAt.split('T')[0]}
-				stop={stoppedAt ? stoppedAt.split('T')[0] : null}
-			/>
+			<DateRange start={startedAt} stop={stoppedAt} />
 		</Facts>
 
 		<Summary
