@@ -1,8 +1,10 @@
+import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
+import exact from 'prop-types-exact';
 import React from 'react';
-import styled from 'react-emotion';
 
-import DateRange, { Time } from '../components/date_range';
-import { markdownExtra } from '../components/section';
+import DateRange, { Time } from './DateRange';
+import { markdownExtra } from './Section';
 
 const Company = styled.article`
 	display: grid;
@@ -62,7 +64,7 @@ const Title = styled.span`
 	grid-area: title;
 `;
 
-export default ({
+const CompanyCard = ({
 	name,
 	salary,
 	salaryPeriod,
@@ -79,13 +81,27 @@ export default ({
 
 			<DateRange
 				start={startedAt.split('T')[0]}
-				stop={stoppedAt.split('T')[0]}
+				stop={stoppedAt ? stoppedAt.split('T')[0] : null}
 			/>
 		</Facts>
 
 		<Summary
-			className={markdownExtra}
+			css={markdownExtra}
 			dangerouslySetInnerHTML={{ __html: summary }}
 		/>
 	</Company>
 );
+
+CompanyCard.defaultProps = {
+	stoppedAt: null
+};
+
+CompanyCard.propTypes = exact({
+	name: PropTypes.string.isRequired,
+	startedAt: PropTypes.string.isRequired,
+	stoppedAt: PropTypes.string,
+	summary: PropTypes.string.isRequired,
+	title: PropTypes.string.isRequired
+});
+
+export default CompanyCard;

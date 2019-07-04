@@ -1,5 +1,7 @@
+import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
+import exact from 'prop-types-exact';
 import React from 'react';
-import styled from 'react-emotion';
 
 import { calculateColorFor, calculateFontSizeFor } from '../utilities';
 
@@ -12,7 +14,7 @@ const KeywordList = styled.p`
 	margin-left: -0.75ch;
 `;
 
-export default ({ keywords }) => {
+const WeightedKeywordList = ({ keywords }) => {
 	const colorFor = calculateColorFor(keywords);
 	const fontSizeFor = calculateFontSizeFor(keywords);
 
@@ -32,3 +34,15 @@ export default ({ keywords }) => {
 		</KeywordList>
 	);
 };
+
+WeightedKeywordList.propTypes = exact({
+	keywords: PropTypes.arrayOf(
+		PropTypes.shape({
+			keyword: PropTypes.string.isRequired,
+			lastUsed: PropTypes.shape({}).isRequired,
+			weight: PropTypes.number.isRequired
+		})
+	).isRequired
+});
+
+export default WeightedKeywordList;

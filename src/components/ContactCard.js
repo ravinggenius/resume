@@ -1,7 +1,9 @@
+import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
+import exact from 'prop-types-exact';
 import React from 'react';
-import styled from 'react-emotion';
 
-import { Body, Header, SectionLayout } from './section';
+import { Body, Header, SectionLayout } from './Section';
 
 const Section = styled(SectionLayout)`
 	@media print, screen and (min-width: 520px) {
@@ -40,7 +42,7 @@ const Address = styled.address`
 	font-style: normal;
 `;
 
-export default ({ email, location, name, phone, title, website }) => (
+const ContactCard = ({ email, location, name, phone, title, website }) => (
 	<Section>
 		<Header>
 			<Name>{name}</Name>
@@ -56,7 +58,7 @@ export default ({ email, location, name, phone, title, website }) => (
 			</Address>
 
 			<Address>
-				<a href={`tel:${phone.replace(/[ \.]/g, '')}`}>
+				<a href={`tel:${phone.replace(/[ .]/g, '')}`}>
 					{phone.replace('+1 ', '')}
 				</a>
 			</Address>
@@ -67,3 +69,14 @@ export default ({ email, location, name, phone, title, website }) => (
 		</Body>
 	</Section>
 );
+
+ContactCard.propTypes = exact({
+	email: PropTypes.string.isRequired,
+	location: PropTypes.string.isRequired,
+	name: PropTypes.string.isRequired,
+	phone: PropTypes.string.isRequired,
+	title: PropTypes.string.isRequired,
+	website: PropTypes.string.isRequired
+});
+
+export default ContactCard;
