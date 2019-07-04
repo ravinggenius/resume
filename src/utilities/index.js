@@ -33,12 +33,11 @@ export const countMonthsAgo = lastUsed =>
 		.diff(lastUsed, 'months')
 		.toObject().months;
 
-export const scale = (fromMin, fromMax, toMin = 0, toMax = 100) => number => {
-	return ((toMax - toMin) * (number - fromMin)) / (fromMax - fromMin) + toMin;
-};
+export const scale = (fromMin, fromMax, toMin = 0, toMax = 100) => number =>
+	((toMax - toMin) * (number - fromMin)) / (fromMax - fromMin) + toMin;
 
-export const weighByExperience = items => {
-	return items
+export const weighByExperience = items =>
+	items
 		.map(({ keywords, startedAt, stoppedAt }) => {
 			const lastUsed = stoppedAt
 				? DateTime.fromISO(stoppedAt)
@@ -66,7 +65,7 @@ export const weighByExperience = items => {
 								? keyword.lastUsed
 								: needle.lastUsed,
 						weight:
-							keyword.duration.toObject().months + needle.weight
+							needle.weight + keyword.duration.toObject().months
 					});
 			} else {
 				return memo.concat({
@@ -79,4 +78,3 @@ export const weighByExperience = items => {
 		.sort((a, b) =>
 			a.keyword.toLowerCase().localeCompare(b.keyword.toLowerCase())
 		);
-};
