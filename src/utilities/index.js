@@ -28,25 +28,48 @@ export const calculateFontSizeFor = keywords => {
 	return weight => `${Math.round(scaleFontSize(weight))}px`;
 };
 
+export const calculatePropminenceFor = keywords => {
+	const ages = keywords.map(({ lastUsed }) => lastUsed);
+	const weights = keywords.map(({ weight }) => weight);
+
+	const leastRecent = ages.reduce((memo, age) => (memo < age ? memo : age));
+	const mostRecent = ages.reduce((memo, age) => (memo > age ? memo : age));
+
+	const lightest = Math.min(...weights);
+	const heaviest = Math.max(...weights);
+
+	const scaleAge = scale(
+		-countMonthsAgo(leastRecent),
+		-countMonthsAgo(mostRecent),
+		0,
+		2
+	);
+
+	const scaleWeight = scale(lightest, heaviest, 0, 2);
+
+	return (lastUsed, weight) =>
+		Math.round(scaleAge(-countMonthsAgo(lastUsed)) + scaleWeight(weight));
+};
+
 export const countMonthsAgo = lastUsed =>
 	DateTime.utc()
 		.diff(lastUsed, 'months')
 		.toObject().months;
 
-export const scale = (fromMin, fromMax, toMin = 0, toMax = 100) => number => {
-	return ((toMax - toMin) * (number - fromMin)) / (fromMax - fromMin) + toMin;
-};
+export const normalizeDate = dateTime =>
+	dateTime ? DateTime.fromISO(dateTime.split('T')[0]) : DateTime.utc();
 
-export const weighByExperience = items => {
-	return items
+export const scale = (fromMin, fromMax, toMin = 0, toMax = 100) => number =>
+	((toMax - toMin) * (number - fromMin)) / (fromMax - fromMin) + toMin;
+
+export const weighByExperience = items =>
+	items
 		.map(({ keywords, startedAt, stoppedAt }) => {
-			const lastUsed = stoppedAt
-				? DateTime.fromISO(stoppedAt)
-				: DateTime.utc();
+			const lastUsed = normalizeDate(stoppedAt);
 
 			return keywords.map(keyword => ({
 				keyword,
-				duration: lastUsed.diff(DateTime.fromISO(startedAt), 'months'),
+				duration: lastUsed.diff(normalizeDate(startedAt), 'months'),
 				lastUsed
 			}));
 		})
@@ -66,7 +89,7 @@ export const weighByExperience = items => {
 								? keyword.lastUsed
 								: needle.lastUsed,
 						weight:
-							keyword.duration.toObject().months + needle.weight
+							needle.weight + keyword.duration.toObject().months
 					});
 			} else {
 				return memo.concat({
@@ -79,4 +102,3 @@ export const weighByExperience = items => {
 		.sort((a, b) =>
 			a.keyword.toLowerCase().localeCompare(b.keyword.toLowerCase())
 		);
-};
