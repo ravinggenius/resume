@@ -1,5 +1,6 @@
 import { StaticQuery, graphql } from 'gatsby';
 import React from 'react';
+import Helmet from 'react-helmet';
 
 import ContactCard from '../components/ContactCard';
 import CompanyCard from '../components/CompanyCard';
@@ -12,7 +13,9 @@ import Section, {
 } from '../components/Section';
 import WeightedKeywordList from '../components/WeightedKeywordList';
 import Primary from '../components/layouts/Primary';
-import { weighByExperience } from '../utilities';
+import { calculatePropminenceFor, weighByExperience } from '../utilities';
+
+const MIN_PROMINENCE_THRESHOLD = 3;
 
 const IndexPage = () => (
 	<StaticQuery
@@ -53,49 +56,75 @@ const IndexPage = () => (
 			}
 		`}
 	>
-		{data => (
-			<Primary>
-				<ContactCard {...data.contact.frontmatter} />
+		{data => {
+			const keywords = weighByExperience(
+				data.companies.edges.map(({ node }) => ({
+					keywords: node.frontmatter.keywords,
+					startedAt: node.frontmatter.startedAt,
+					stoppedAt: node.frontmatter.stoppedAt
+				}))
+			);
 
-				<SectionLayout>
-					<Header>
-						<Title>Profile</Title>
-					</Header>
+			const prominenceFor = calculatePropminenceFor(keywords);
 
-					<Body
-						css={markdownExtra}
-						dangerouslySetInnerHTML={{
-							__html: data.contact.profile
-						}}
-					/>
-				</SectionLayout>
+			const keywordsWithProminence = keywords.map(
+				({ lastUsed, weight, ...keyword }) => ({
+					lastUsed,
+					weight,
+					prominence: prominenceFor(lastUsed, weight),
+					...keyword
+				})
+			);
 
-				<Section title="Skills/Tools">
-					<WeightedKeywordList
-						keywords={weighByExperience(
-							data.companies.edges.map(({ node }) => ({
-								keywords: node.frontmatter.keywords,
-								startedAt: node.frontmatter.startedAt,
-								stoppedAt: node.frontmatter.stoppedAt
-							}))
-						)}
-					/>
-				</Section>
+			const mostProminentKeywords = keywordsWithProminence.filter(
+				({ prominence }) => prominence >= MIN_PROMINENCE_THRESHOLD
+			);
 
-				<Section title="Experience">
-					{data.companies.edges.map(({ node }) => (
-						<CompanyCard
-							key={node.fields.slug}
-							name={node.frontmatter.name}
-							startedAt={node.frontmatter.startedAt}
-							stoppedAt={node.frontmatter.stoppedAt}
-							summary={node.summary}
-							title={node.frontmatter.title}
+			return (
+				<Primary>
+					<Helmet>
+						<meta
+							name="keywords"
+							content={mostProminentKeywords
+								.map(({ keyword }) => keyword)
+								.join(', ')}
 						/>
-					))}
-				</Section>
-			</Primary>
-		)}
+					</Helmet>
+
+					<ContactCard {...data.contact.frontmatter} />
+
+					<SectionLayout>
+						<Header>
+							<Title>Profile</Title>
+						</Header>
+
+						<Body
+							css={markdownExtra}
+							dangerouslySetInnerHTML={{
+								__html: data.contact.profile
+							}}
+						/>
+					</SectionLayout>
+
+					<Section title="Skills/Tools">
+						<WeightedKeywordList {...{ keywords }} />
+					</Section>
+
+					<Section title="Experience">
+						{data.companies.edges.map(({ node }) => (
+							<CompanyCard
+								key={node.fields.slug}
+								name={node.frontmatter.name}
+								startedAt={node.frontmatter.startedAt}
+								stoppedAt={node.frontmatter.stoppedAt}
+								summary={node.summary}
+								title={node.frontmatter.title}
+							/>
+						))}
+					</Section>
+				</Primary>
+			);
+		}}
 	</StaticQuery>
 );
 

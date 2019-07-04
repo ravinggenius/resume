@@ -28,6 +28,29 @@ export const calculateFontSizeFor = keywords => {
 	return weight => `${Math.round(scaleFontSize(weight))}px`;
 };
 
+export const calculatePropminenceFor = keywords => {
+	const ages = keywords.map(({ lastUsed }) => lastUsed);
+	const weights = keywords.map(({ weight }) => weight);
+
+	const leastRecent = ages.reduce((memo, age) => (memo < age ? memo : age));
+	const mostRecent = ages.reduce((memo, age) => (memo > age ? memo : age));
+
+	const lightest = Math.min(...weights);
+	const heaviest = Math.max(...weights);
+
+	const scaleAge = scale(
+		-countMonthsAgo(leastRecent),
+		-countMonthsAgo(mostRecent),
+		0,
+		2
+	);
+
+	const scaleWeight = scale(lightest, heaviest, 0, 2);
+
+	return (lastUsed, weight) =>
+		Math.round(scaleAge(-countMonthsAgo(lastUsed)) + scaleWeight(weight));
+};
+
 export const countMonthsAgo = lastUsed =>
 	DateTime.utc()
 		.diff(lastUsed, 'months')
