@@ -34,13 +34,15 @@ export const countMonthsAgo = lastUsed =>
 		.toObject().months;
 
 export const scale = (fromMin, fromMax, toMin = 0, toMax = 100) => number => {
-	return (toMax - toMin) * (number - fromMin) / (fromMax - fromMin) + toMin;
+	return ((toMax - toMin) * (number - fromMin)) / (fromMax - fromMin) + toMin;
 };
 
 export const weighByExperience = items => {
 	return items
 		.map(({ keywords, startedAt, stoppedAt }) => {
-			const lastUsed = DateTime.fromISO(stoppedAt);
+			const lastUsed = stoppedAt
+				? DateTime.fromISO(stoppedAt)
+				: DateTime.utc();
 
 			return keywords.map(keyword => ({
 				keyword,

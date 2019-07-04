@@ -1,5 +1,8 @@
+import { css } from '@emotion/core';
+import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
+import exact from 'prop-types-exact';
 import React from 'react';
-import styled, { css } from 'react-emotion';
 
 export const SectionLayout = styled.section`
 	display: grid;
@@ -52,7 +55,7 @@ export const markdownExtra = css`
 	}
 `;
 
-export default ({ children, title }) => (
+const Section = ({ children, title }) => (
 	<SectionLayout>
 		<Header>
 			<Title>{title}</Title>
@@ -61,3 +64,10 @@ export default ({ children, title }) => (
 		<Body>{children}</Body>
 	</SectionLayout>
 );
+
+Section.propTypes = exact({
+	children: PropTypes.node.isRequired,
+	title: PropTypes.string.isRequired
+});
+
+export default Section;
