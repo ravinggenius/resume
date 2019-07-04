@@ -10,12 +10,12 @@ const DATE_FORMAT = 'MMMM yyyy';
 
 export default ({ start, stop }) => {
 	const startedOn = DateTime.fromISO(start);
-	const stoppedOn = DateTime.fromISO(stop);
+	const stoppedOn = stop ? DateTime.fromISO(stop) : DateTime.utc();
 
 	return (
 		<Time dateTime={`${startedOn.toISODate()}/${stoppedOn.toISODate()}`}>
 			{startedOn.toFormat(DATE_FORMAT)} &ndash;{' '}
-			{stoppedOn.toFormat(DATE_FORMAT)}
+			{stop ? stoppedOn.toFormat(DATE_FORMAT) : 'present'}
 		</Time>
 	);
 };

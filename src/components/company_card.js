@@ -79,7 +79,7 @@ export default ({
 
 			<DateRange
 				start={startedAt.split('T')[0]}
-				stop={stoppedAt.split('T')[0]}
+				stop={stoppedAt ? stoppedAt.split('T')[0] : null}
 			/>
 		</Facts>
 

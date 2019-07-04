@@ -2,7 +2,7 @@
 name: Acme, Inc
 title: Web Developer
 startedAt: 2010-01-01
-stoppedAt: 2010-12-31
+stoppedAt: 2010-12-31 # optional
 salary: 100_000_00
 salaryPeriod: year
 phone: 333 555.9876

@@ -34,7 +34,9 @@ const IndexPage = ({ data }) => (
 					data.companies.edges.map(({ node }) => ({
 						keywords: node.frontmatter.keywords,
 						startedAt: node.frontmatter.startedAt.split('T')[0],
-						stoppedAt: node.frontmatter.stoppedAt.split('T')[0]
+						stoppedAt: node.frontmatter.stoppedAt
+							? node.frontmatter.stoppedAt.split('T')[0]
+							: null
 					}))
 				)}
 			/>

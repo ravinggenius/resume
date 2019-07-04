@@ -40,7 +40,9 @@ export const scale = (fromMin, fromMax, toMin = 0, toMax = 100) => number => {
 export const weighByExperience = items => {
 	return items
 		.map(({ keywords, startedAt, stoppedAt }) => {
-			const lastUsed = DateTime.fromISO(stoppedAt);
+			const lastUsed = stoppedAt
+				? DateTime.fromISO(stoppedAt)
+				: DateTime.utc();
 
 			return keywords.map(keyword => ({
 				keyword,
