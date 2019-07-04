@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
-import { DateTime } from 'luxon';
 import PropTypes from 'prop-types';
 import exact from 'prop-types-exact';
 import React from 'react';
+
+import { normalizeDate } from '../utilities';
 
 export const Time = styled.time`
 	color: #777777;
@@ -11,8 +12,8 @@ export const Time = styled.time`
 const DATE_FORMAT = 'MMMM yyyy';
 
 const DateRange = ({ start, stop }) => {
-	const startedOn = DateTime.fromISO(start);
-	const stoppedOn = stop ? DateTime.fromISO(stop) : DateTime.utc();
+	const startedOn = normalizeDate(start);
+	const stoppedOn = normalizeDate(stop);
 
 	return (
 		<Time dateTime={`${startedOn.toISODate()}/${stoppedOn.toISODate()}`}>

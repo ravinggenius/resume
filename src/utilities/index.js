@@ -33,19 +33,20 @@ export const countMonthsAgo = lastUsed =>
 		.diff(lastUsed, 'months')
 		.toObject().months;
 
+export const normalizeDate = dateTime =>
+	dateTime ? DateTime.fromISO(dateTime.split('T')[0]) : DateTime.utc();
+
 export const scale = (fromMin, fromMax, toMin = 0, toMax = 100) => number =>
 	((toMax - toMin) * (number - fromMin)) / (fromMax - fromMin) + toMin;
 
 export const weighByExperience = items =>
 	items
 		.map(({ keywords, startedAt, stoppedAt }) => {
-			const lastUsed = stoppedAt
-				? DateTime.fromISO(stoppedAt)
-				: DateTime.utc();
+			const lastUsed = normalizeDate(stoppedAt);
 
 			return keywords.map(keyword => ({
 				keyword,
-				duration: lastUsed.diff(DateTime.fromISO(startedAt), 'months'),
+				duration: lastUsed.diff(normalizeDate(startedAt), 'months'),
 				lastUsed
 			}));
 		})
