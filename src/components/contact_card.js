@@ -56,7 +56,7 @@ export default ({ email, location, name, phone, title, website }) => (
 			</Address>
 
 			<Address>
-				<a href={`tel:${phone.replace(/[ \.]/g, '')}`}>
+				<a href={`tel:${phone.replace(/[ .]/g, '')}`}>
 					{phone.replace('+1 ', '')}
 				</a>
 			</Address>
