@@ -11,10 +11,11 @@ import Section, {
 	markdownExtra
 } from '../components/section';
 import WeightedKeywordList from '../components/weighted_keyword_list';
+import Layout from '../layouts';
 import { weighByExperience } from '../utilities';
 
 const IndexPage = ({ data }) => (
-	<main role="main">
+	<Layout>
 		<ContactCard {...data.contact.frontmatter} />
 
 		<SectionLayout>
@@ -51,7 +52,7 @@ const IndexPage = ({ data }) => (
 				/>
 			))}
 		</Section>
-	</main>
+	</Layout>
 );
 
 export default IndexPage;

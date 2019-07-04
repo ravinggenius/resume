@@ -79,14 +79,14 @@ const Layout = ({ children }) => (
 					`}
 				/>
 
-				{children()}
+				<main role="main">{children}</main>
 			</>
 		)}
 	</StaticQuery>
 );
 
 Layout.propTypes = {
-	children: PropTypes.func.isRequired
+	children: PropTypes.node.isRequired
 };
 
 export default Layout;
