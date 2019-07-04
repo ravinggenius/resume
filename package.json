@@ -20,6 +20,8 @@
     "gatsby-source-filesystem": "^2.x.x",
     "gatsby-transformer-remark": "^2.x.x",
     "luxon": "^1.x.x",
+    "prop-types": "^15.x.x",
+    "prop-types-exact": "^1.x.x",
     "react": "^16.x.x",
     "react-dom": "^16.x.x",
     "react-helmet": "^5.x.x"

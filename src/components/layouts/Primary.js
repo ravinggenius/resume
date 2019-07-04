@@ -1,6 +1,7 @@
 import { Global, css } from '@emotion/core';
 import { StaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
+import exact from 'prop-types-exact';
 import React from 'react';
 import Helmet from 'react-helmet';
 
@@ -85,8 +86,8 @@ const Primary = ({ children }) => (
 	</StaticQuery>
 );
 
-Primary.propTypes = {
+Primary.propTypes = exact({
 	children: PropTypes.node.isRequired
-};
+});
 
 export default Primary;

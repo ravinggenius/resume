@@ -1,4 +1,6 @@
 import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
+import exact from 'prop-types-exact';
 import React from 'react';
 
 import DateRange, { Time } from './DateRange';
@@ -89,5 +91,17 @@ const CompanyCard = ({
 		/>
 	</Company>
 );
+
+CompanyCard.defaultProps = {
+	stoppedAt: null
+};
+
+CompanyCard.propTypes = exact({
+	name: PropTypes.string.isRequired,
+	startedAt: PropTypes.string.isRequired,
+	stoppedAt: PropTypes.string,
+	summary: PropTypes.string.isRequired,
+	title: PropTypes.string.isRequired
+});
 
 export default CompanyCard;

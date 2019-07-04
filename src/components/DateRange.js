@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 import { DateTime } from 'luxon';
+import PropTypes from 'prop-types';
+import exact from 'prop-types-exact';
 import React from 'react';
 
 export const Time = styled.time`
@@ -19,5 +21,14 @@ const DateRange = ({ start, stop }) => {
 		</Time>
 	);
 };
+
+DateRange.defaultProps = {
+	stop: null
+};
+
+DateRange.propTypes = exact({
+	start: PropTypes.string.isRequired,
+	stop: PropTypes.string
+});
 
 export default DateRange;

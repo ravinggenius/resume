@@ -1,5 +1,7 @@
 import { css } from '@emotion/core';
 import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
+import exact from 'prop-types-exact';
 import React from 'react';
 
 export const SectionLayout = styled.section`
@@ -62,5 +64,10 @@ const Section = ({ children, title }) => (
 		<Body>{children}</Body>
 	</SectionLayout>
 );
+
+Section.propTypes = exact({
+	children: PropTypes.node.isRequired,
+	title: PropTypes.string.isRequired
+});
 
 export default Section;

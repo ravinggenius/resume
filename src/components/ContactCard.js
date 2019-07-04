@@ -1,4 +1,6 @@
 import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
+import exact from 'prop-types-exact';
 import React from 'react';
 
 import { Body, Header, SectionLayout } from './Section';
@@ -67,5 +69,14 @@ const ContactCard = ({ email, location, name, phone, title, website }) => (
 		</Body>
 	</Section>
 );
+
+ContactCard.propTypes = exact({
+	email: PropTypes.string.isRequired,
+	location: PropTypes.string.isRequired,
+	name: PropTypes.string.isRequired,
+	phone: PropTypes.string.isRequired,
+	title: PropTypes.string.isRequired,
+	website: PropTypes.string.isRequired
+});
 
 export default ContactCard;
