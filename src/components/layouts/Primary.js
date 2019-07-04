@@ -6,7 +6,7 @@ import Helmet from 'react-helmet';
 
 import '@csstools/normalize.css';
 
-const Layout = ({ children }) => (
+const Primary = ({ children }) => (
 	<StaticQuery
 		query={graphql`
 			query SiteMetaQuery {
@@ -85,8 +85,8 @@ const Layout = ({ children }) => (
 	</StaticQuery>
 );
 
-Layout.propTypes = {
+Primary.propTypes = {
 	children: PropTypes.node.isRequired
 };
 
-export default Layout;
+export default Primary;

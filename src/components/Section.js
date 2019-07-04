@@ -53,7 +53,7 @@ export const markdownExtra = css`
 	}
 `;
 
-export default ({ children, title }) => (
+const Section = ({ children, title }) => (
 	<SectionLayout>
 		<Header>
 			<Title>{title}</Title>
@@ -62,3 +62,5 @@ export default ({ children, title }) => (
 		<Body>{children}</Body>
 	</SectionLayout>
 );
+
+export default Section;

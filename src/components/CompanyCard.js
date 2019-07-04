@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import React from 'react';
 
-import DateRange, { Time } from '../components/date_range';
-import { markdownExtra } from '../components/section';
+import DateRange, { Time } from './DateRange';
+import { markdownExtra } from './Section';
 
 const Company = styled.article`
 	display: grid;
@@ -62,7 +62,7 @@ const Title = styled.span`
 	grid-area: title;
 `;
 
-export default ({
+const CompanyCard = ({
 	name,
 	salary,
 	salaryPeriod,
@@ -89,3 +89,5 @@ export default ({
 		/>
 	</Company>
 );
+
+export default CompanyCard;

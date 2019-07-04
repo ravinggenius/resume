@@ -12,7 +12,7 @@ const KeywordList = styled.p`
 	margin-left: -0.75ch;
 `;
 
-export default ({ keywords }) => {
+const WeightedKeywordList = ({ keywords }) => {
 	const colorFor = calculateColorFor(keywords);
 	const fontSizeFor = calculateFontSizeFor(keywords);
 
@@ -32,3 +32,5 @@ export default ({ keywords }) => {
 		</KeywordList>
 	);
 };
+
+export default WeightedKeywordList;

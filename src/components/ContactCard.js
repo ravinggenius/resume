@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import React from 'react';
 
-import { Body, Header, SectionLayout } from './section';
+import { Body, Header, SectionLayout } from './Section';
 
 const Section = styled(SectionLayout)`
 	@media print, screen and (min-width: 520px) {
@@ -40,7 +40,7 @@ const Address = styled.address`
 	font-style: normal;
 `;
 
-export default ({ email, location, name, phone, title, website }) => (
+const ContactCard = ({ email, location, name, phone, title, website }) => (
 	<Section>
 		<Header>
 			<Name>{name}</Name>
@@ -67,3 +67,5 @@ export default ({ email, location, name, phone, title, website }) => (
 		</Body>
 	</Section>
 );
+
+export default ContactCard;

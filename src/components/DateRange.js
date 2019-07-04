@@ -8,7 +8,7 @@ export const Time = styled.time`
 
 const DATE_FORMAT = 'MMMM yyyy';
 
-export default ({ start, stop }) => {
+const DateRange = ({ start, stop }) => {
 	const startedOn = DateTime.fromISO(start);
 	const stoppedOn = stop ? DateTime.fromISO(stop) : DateTime.utc();
 
@@ -19,3 +19,5 @@ export default ({ start, stop }) => {
 		</Time>
 	);
 };
+
+export default DateRange;

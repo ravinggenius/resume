@@ -1,21 +1,21 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 
-import ContactCard from '../components/contact_card';
-import CompanyCard from '../components/company_card';
+import ContactCard from '../components/ContactCard';
+import CompanyCard from '../components/CompanyCard';
 import Section, {
 	Body,
 	Header,
 	SectionLayout,
 	Title,
 	markdownExtra
-} from '../components/section';
-import WeightedKeywordList from '../components/weighted_keyword_list';
-import Layout from '../layouts';
+} from '../components/Section';
+import WeightedKeywordList from '../components/WeightedKeywordList';
+import Primary from '../components/layouts/Primary';
 import { weighByExperience } from '../utilities';
 
 const IndexPage = ({ data }) => (
-	<Layout>
+	<Primary>
 		<ContactCard {...data.contact.frontmatter} />
 
 		<SectionLayout>
@@ -52,7 +52,7 @@ const IndexPage = ({ data }) => (
 				/>
 			))}
 		</Section>
-	</Layout>
+	</Primary>
 );
 
 export default IndexPage;
