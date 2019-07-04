@@ -1,3 +1,4 @@
+import { graphql } from 'gatsby';
 import React from 'react';
 
 import ContactCard from '../components/contact_card';
@@ -22,7 +23,7 @@ const IndexPage = ({ data }) => (
 			</Header>
 
 			<Body
-				className={markdownExtra}
+				css={markdownExtra}
 				dangerouslySetInnerHTML={{ __html: data.contact.profile }}
 			/>
 		</SectionLayout>

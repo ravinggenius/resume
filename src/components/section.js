@@ -1,5 +1,6 @@
+import { css } from '@emotion/core';
+import styled from '@emotion/styled';
 import React from 'react';
-import styled, { css } from 'react-emotion';
 
 export const SectionLayout = styled.section`
 	display: grid;

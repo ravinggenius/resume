@@ -34,7 +34,7 @@ export const countMonthsAgo = lastUsed =>
 		.toObject().months;
 
 export const scale = (fromMin, fromMax, toMin = 0, toMax = 100) => number => {
-	return (toMax - toMin) * (number - fromMin) / (fromMax - fromMin) + toMin;
+	return ((toMax - toMin) * (number - fromMin)) / (fromMax - fromMin) + toMin;
 };
 
 export const weighByExperience = items => {

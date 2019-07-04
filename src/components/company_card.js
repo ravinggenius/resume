@@ -1,5 +1,5 @@
+import styled from '@emotion/styled';
 import React from 'react';
-import styled from 'react-emotion';
 
 import DateRange, { Time } from '../components/date_range';
 import { markdownExtra } from '../components/section';
@@ -84,7 +84,7 @@ export default ({
 		</Facts>
 
 		<Summary
-			className={markdownExtra}
+			css={markdownExtra}
 			dangerouslySetInnerHTML={{ __html: summary }}
 		/>
 	</Company>

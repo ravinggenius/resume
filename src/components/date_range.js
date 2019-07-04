@@ -1,6 +1,6 @@
+import styled from '@emotion/styled';
 import { DateTime } from 'luxon';
 import React from 'react';
-import styled from 'react-emotion';
 
 export const Time = styled.time`
 	color: #777777;

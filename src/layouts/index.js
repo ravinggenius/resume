@@ -1,25 +1,88 @@
+import { Global, css } from '@emotion/core';
+import { StaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import 'normalize.css';
+import '@csstools/normalize.css';
 
-import './index.css';
-
-const Layout = ({ children, data }) => (
-	<div>
-		<Helmet
-			meta={[
-				{
-					name: 'description',
-					content: `Résumé of ${data.contact.frontmatter.name}`
+const Layout = ({ children }) => (
+	<StaticQuery
+		query={graphql`
+			query SiteMetaQuery {
+				contact: markdownRemark(fields: { slug: { eq: "/contact" } }) {
+					frontmatter {
+						name
+					}
 				}
-			]}
-			title={`Résumé | ${data.contact.frontmatter.name}`}
-		/>
+			}
+		`}
+	>
+		{data => (
+			<>
+				<Helmet>
+					<meta charSet="utf-8" />
 
-		{children()}
-	</div>
+					<title>{`Résumé | ${data.contact.frontmatter.name}`}</title>
+
+					<meta
+						name="description"
+						content={`Résumé of ${data.contact.frontmatter.name}`}
+					/>
+				</Helmet>
+
+				<Global
+					styles={css`
+						body {
+							color: #333333;
+							font-family: 'Lato', 'Helvetica Neue', Helvetica,
+								Arial, sans-serif;
+							margin-left: auto;
+							margin-right: auto;
+							max-width: 8in;
+
+							@media print {
+								max-width: 7in;
+							}
+						}
+
+						a {
+							color: #337ab7;
+							text-decoration: none;
+
+							&:focus,
+							&:hover {
+								color: #23527c;
+								text-decoration: underline;
+							}
+						}
+
+						h1,
+						h2,
+						h3,
+						h4,
+						h5,
+						h6 {
+							font-weight: 500;
+							margin: 0;
+						}
+
+						@media screen {
+							main {
+								margin: 1em;
+							}
+						}
+
+						p {
+							margin: 0;
+						}
+					`}
+				/>
+
+				{children()}
+			</>
+		)}
+	</StaticQuery>
 );
 
 Layout.propTypes = {
@@ -27,13 +90,3 @@ Layout.propTypes = {
 };
 
 export default Layout;
-
-export const query = graphql`
-	query SiteMetaQuery {
-		contact: markdownRemark(fields: { slug: { eq: "/contact" } }) {
-			frontmatter {
-				name
-			}
-		}
-	}
-`;
