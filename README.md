@@ -8,9 +8,15 @@ Single-page static résumé site, built with [Gatsby](https://www.gatsbyjs.org/)
 * Run `npm install`
 * Run `npm run develop` to start a hot-reloading development server
 * Copy `src/data/contact.md-sample` to `src/data/contact.md` and fill in with your details
-* Copy `src/data/companies/acme.md-sample` a few times and fill in work history (one company per file). One of the goals of this project is to fit on a single letter-sized page, so don't go overboard
+* Copy `src/data/companies/acme.md-sample` a few times and fill in work history (one company per file). One of the goals of this project is to fit on a single page PDF, so don't go overboard
 
 
 ### Publish
 
-Once you are happy with your résumé, run `npm run build` to compile all assets to `public`. Copy the `public` directory to your host and you're done!
+Once you are happy with your résumé, run `npm run build` to compile all assets to `public`. Copy the `public` directory to any static host (I like Netlify) and you're done!
+
+
+### TODO
+
+* [ ] Insert last updated at and maybe some other metadata when building (`git describe`, maybe https://www.npmjs.com/package/gatsby-source-git)
+* [ ] Remove calls to `dangerouslySetInnerHTML` in favor of `rehype-react` or MDX
