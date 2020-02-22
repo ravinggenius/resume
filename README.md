@@ -14,3 +14,9 @@ Single-page static résumé site, built with [Gatsby](https://www.gatsbyjs.org/)
 ### Publish
 
 Once you are happy with your résumé, run `npm run build` to compile all assets to `public`. Copy the `public` directory to any static host (I like Netlify) and you're done!
+
+
+### TODO
+
+* [ ] Insert last updated at and maybe some other metadata when building (`git describe`, maybe https://www.npmjs.com/package/gatsby-source-git)
+* [ ] Remove calls to `dangerouslySetInnerHTML` in favor of `rehype-react` or MDX
