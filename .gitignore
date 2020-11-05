@@ -3,3 +3,6 @@ node_modules
 public
 src/data/companies/*.md
 src/data/contact.md
+
+# Local Netlify folder
+.netlify
