@@ -8,10 +8,11 @@
 		"build": "gatsby build",
 		"develop": "gatsby develop",
 		"format": "prettier --write 'src/**/*.js' '*.js'",
+		"serve": "gatsby serve",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"dependencies": {
-		"@csstools/normalize.css": "^10.x.x",
+		"@csstools/normalize.css": "^11.x.x",
 		"@emotion/core": "^10.x.x",
 		"@emotion/styled": "^10.x.x",
 		"gatsby": "^2.x.x",
@@ -24,10 +25,10 @@
 		"prop-types-exact": "^1.x.x",
 		"react": "^16.x.x",
 		"react-dom": "^16.x.x",
-		"react-helmet": "^5.x.x"
+		"react-helmet": "^6.x.x"
 	},
 	"devDependencies": {
 		"babel-plugin-emotion": "^10.x.x",
-		"prettier": "^1.x.x"
+		"prettier": "^2.x.x"
 	}
 }
