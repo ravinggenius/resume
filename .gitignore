@@ -1,4 +1,6 @@
 .cache
+.env.*
+!.env.sample
 node_modules
 public
 src/data/companies/*.md
