@@ -4,12 +4,12 @@ import { Helmet } from 'react-helmet';
 
 import ContactCard from '../components/ContactCard';
 import CompanyCard from '../components/CompanyCard';
+import Markdown from '../components/Markdown';
 import Section, {
 	Body,
 	Header,
 	SectionLayout,
-	Title,
-	markdownExtra
+	Title
 } from '../components/Section';
 import WeightedKeywordList from '../components/WeightedKeywordList';
 import Primary from '../components/layouts/Primary';
@@ -69,12 +69,7 @@ const IndexPage = ({
 					<Title>Profile</Title>
 				</Header>
 
-				<Body
-					css={markdownExtra}
-					dangerouslySetInnerHTML={{
-						__html: contact.profile
-					}}
-				/>
+				<Markdown tree={contact.profile} wrapper={Body} />
 			</SectionLayout>
 
 			<Section title="Skills/Tools">
@@ -116,7 +111,7 @@ export const query = graphql`
 					stoppedAt
 					title
 				}
-				summary: html
+				summary: htmlAst
 			}
 		}
 
@@ -129,7 +124,7 @@ export const query = graphql`
 				title
 				website
 			}
-			profile: html
+			profile: htmlAst
 		}
 	}
 `;

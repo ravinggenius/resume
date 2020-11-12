@@ -27,7 +27,8 @@
 		"prop-types-exact": "^1.x.x",
 		"react": "^16.x.x",
 		"react-dom": "^16.x.x",
-		"react-helmet": "^6.x.x"
+		"react-helmet": "^6.x.x",
+		"rehype-react": "^6.1.0"
 	},
 	"devDependencies": {
 		"babel-plugin-emotion": "^10.x.x",
