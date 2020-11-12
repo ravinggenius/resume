@@ -17,12 +17,17 @@ import { calculatePropminenceFor, weighByExperience } from '../utilities';
 
 const MIN_PROMINENCE_THRESHOLD = 3;
 
-const IndexPage = ({ data: { companies, contact } }) => {
+const IndexPage = ({
+	data: {
+		companies: { nodes: companies },
+		contact
+	}
+}) => {
 	const keywords = weighByExperience(
-		companies.edges.map(({ node }) => ({
-			keywords: node.frontmatter.keywords,
-			startedAt: node.frontmatter.startedAt,
-			stoppedAt: node.frontmatter.stoppedAt
+		companies.map(({ frontmatter }) => ({
+			keywords: frontmatter.keywords,
+			startedAt: frontmatter.startedAt,
+			stoppedAt: frontmatter.stoppedAt
 		}))
 	);
 
@@ -42,8 +47,13 @@ const IndexPage = ({ data: { companies, contact } }) => {
 	);
 
 	return (
-		<Primary>
+		<Primary title={`Résumé | ${contact.frontmatter.name}`}>
 			<Helmet>
+				<meta
+					name="description"
+					content={`Résumé of ${contact.frontmatter.name}`}
+				/>
+
 				<meta
 					name="keywords"
 					content={mostProminentKeywords
@@ -72,14 +82,14 @@ const IndexPage = ({ data: { companies, contact } }) => {
 			</Section>
 
 			<Section title="Experience">
-				{companies.edges.map(({ node }) => (
+				{companies.map(({ fields, frontmatter, summary }) => (
 					<CompanyCard
-						key={node.fields.slug}
-						name={node.frontmatter.name}
-						startedAt={node.frontmatter.startedAt}
-						stoppedAt={node.frontmatter.stoppedAt}
-						summary={node.summary}
-						title={node.frontmatter.title}
+						{...{ summary }}
+						key={fields.slug}
+						name={frontmatter.name}
+						startedAt={frontmatter.startedAt}
+						stoppedAt={frontmatter.stoppedAt}
+						title={frontmatter.title}
 					/>
 				))}
 			</Section>
@@ -95,20 +105,18 @@ export const query = graphql`
 			filter: { frontmatter: { isPublished: { eq: true } } }
 			sort: { fields: [frontmatter___startedAt], order: DESC }
 		) {
-			edges {
-				node {
-					fields {
-						slug
-					}
-					frontmatter {
-						keywords
-						name
-						startedAt
-						stoppedAt
-						title
-					}
-					summary: html
+			nodes {
+				fields {
+					slug
 				}
+				frontmatter {
+					keywords
+					name
+					startedAt
+					stoppedAt
+					title
+				}
+				summary: html
 			}
 		}
 
