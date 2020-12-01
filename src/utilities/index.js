@@ -1,6 +1,6 @@
 import { DateTime } from 'luxon';
 
-export const calculateColorFor = keywords => {
+export const calculateColorFor = (keywords) => {
 	const ages = keywords.map(({ lastUsed }) => lastUsed);
 
 	const leastRecent = ages.reduce((memo, age) => (memo < age ? memo : age));
@@ -13,11 +13,11 @@ export const calculateColorFor = keywords => {
 		65
 	);
 
-	return lastUsed =>
+	return (lastUsed) =>
 		`hsl(0deg, 0%, ${Math.round(scaleColor(countMonthsAgo(lastUsed)))}%)`;
 };
 
-export const calculateFontSizeFor = keywords => {
+export const calculateFontSizeFor = (keywords) => {
 	const weights = keywords.map(({ weight }) => weight);
 
 	const lightest = Math.min(...weights);
@@ -25,10 +25,10 @@ export const calculateFontSizeFor = keywords => {
 
 	const scaleFontSize = scale(lightest, heaviest, 12, 20);
 
-	return weight => `${Math.round(scaleFontSize(weight))}px`;
+	return (weight) => `${Math.round(scaleFontSize(weight))}px`;
 };
 
-export const calculatePropminenceFor = keywords => {
+export const calculatePropminenceFor = (keywords) => {
 	const ages = keywords.map(({ lastUsed }) => lastUsed);
 	const weights = keywords.map(({ weight }) => weight);
 
@@ -51,23 +51,21 @@ export const calculatePropminenceFor = keywords => {
 		Math.round(scaleAge(-countMonthsAgo(lastUsed)) + scaleWeight(weight));
 };
 
-export const countMonthsAgo = lastUsed =>
-	DateTime.utc()
-		.diff(lastUsed, 'months')
-		.toObject().months;
+export const countMonthsAgo = (lastUsed) =>
+	DateTime.utc().diff(lastUsed, 'months').toObject().months;
 
-export const normalizeDate = dateTime =>
+export const normalizeDate = (dateTime) =>
 	dateTime ? DateTime.fromISO(dateTime.split('T')[0]) : DateTime.utc();
 
-export const scale = (fromMin, fromMax, toMin = 0, toMax = 100) => number =>
+export const scale = (fromMin, fromMax, toMin = 0, toMax = 100) => (number) =>
 	((toMax - toMin) * (number - fromMin)) / (fromMax - fromMin) + toMin;
 
-export const weighByExperience = items =>
+export const weighByExperience = (items) =>
 	items
 		.map(({ keywords, startedAt, stoppedAt }) => {
 			const lastUsed = normalizeDate(stoppedAt);
 
-			return keywords.map(keyword => ({
+			return keywords.map((keyword) => ({
 				keyword,
 				duration: lastUsed.diff(normalizeDate(startedAt), 'months'),
 				lastUsed
@@ -76,12 +74,12 @@ export const weighByExperience = items =>
 		.reduce((memo, keywords) => memo.concat(keywords))
 		.reduce((memo, keyword) => {
 			const needle = memo.find(
-				straw => straw.keyword === keyword.keyword
+				(straw) => straw.keyword === keyword.keyword
 			);
 
 			if (needle) {
 				return memo
-					.filter(straw => straw.keyword !== keyword.keyword)
+					.filter((straw) => straw.keyword !== keyword.keyword)
 					.concat({
 						keyword: keyword.keyword,
 						lastUsed:
