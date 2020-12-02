@@ -4,7 +4,7 @@ import exact from 'prop-types-exact';
 import React from 'react';
 
 import DateRange, { Time } from './DateRange';
-import { markdownExtra } from './Section';
+import Markdown from './Markdown';
 
 const Company = styled.article`
 	display: grid;
@@ -64,15 +64,7 @@ const Title = styled.span`
 	grid-area: title;
 `;
 
-const CompanyCard = ({
-	name,
-	salary,
-	salaryPeriod,
-	startedAt,
-	stoppedAt,
-	summary,
-	title
-}) => (
+const CompanyCard = ({ name, startedAt, stoppedAt, summary, title }) => (
 	<Company>
 		<Facts>
 			<Name>{name}</Name>
@@ -82,10 +74,7 @@ const CompanyCard = ({
 			<DateRange start={startedAt} stop={stoppedAt} />
 		</Facts>
 
-		<Summary
-			css={markdownExtra}
-			dangerouslySetInnerHTML={{ __html: summary }}
-		/>
+		<Markdown tree={summary} wrapper={Summary} />
 	</Company>
 );
 

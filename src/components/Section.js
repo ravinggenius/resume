@@ -1,4 +1,3 @@
-import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import exact from 'prop-types-exact';
@@ -41,18 +40,6 @@ export const Title = styled.h2`
 
 export const Body = styled.section`
 	grid-area: body;
-`;
-
-export const markdownExtra = css`
-	@media print {
-		a::before {
-			content: '[';
-		}
-
-		a::after {
-			content: '](' attr(href) ')';
-		}
-	}
 `;
 
 const Section = ({ children, title }) => (
