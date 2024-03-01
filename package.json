@@ -21,7 +21,7 @@
 		"gatsby-plugin-google-analytics": "^2.x.x",
 		"gatsby-plugin-react-helmet": "^3.x.x",
 		"gatsby-source-filesystem": "^2.x.x",
-		"gatsby-transformer-remark": "^2.x.x",
+		"gatsby-transformer-remark": "^6.x.x",
 		"luxon": "^1.x.x",
 		"prop-types": "^15.x.x",
 		"prop-types-exact": "^1.x.x",
