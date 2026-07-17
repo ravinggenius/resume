@@ -1,0 +1,236 @@
+{
+  "basics": {
+    "name": "Thomas Ingram",
+    "label": "Full-Stack Web Developer; Problem Solver; Collaborator; Mentor",
+    "email": "thomas.ingram@gmail.com",
+    "phone": "+19194496305",
+    "url": "https://www.ravinggenius.com/",
+    "summary": "Self-taught full-stack web developer with a strong desire for new challenges. Build, contribute to and maintain open source projects. Maintain several sites, some built from scratch and some CMS-based. Attend trade meetings and conferences regularly. Mentor junior developers. Open source work hosted on GitHub. Many people across several companies have told me how much they appreciate working with me and how much they have learned from me.",
+    "location": {
+      "city": "Greater Raleigh Area",
+      "countryCode": "US",
+      "region": "NC"
+    },
+    "profiles": [
+      {
+        "network": "Github",
+        "username": "github",
+        "url": "https://github.com/ravinggenius"
+      },
+      {
+        "network": "GitLab",
+        "username": "gitlab",
+        "url": "https://gitlab.com/ravinggenius"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "linkedin",
+        "url": "https://www.linkedin.com/in/ravinggenius/"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "CISYS LifeSciences",
+      "position": "Web Developer",
+      "startDate": "2007-01-01",
+      "endDate": "2010-03-31",
+      "summary": "Configure, build and maintain websites and web applications for clients. Advocate for test-driven development and other best practices."
+    },
+    {
+      "name": "RoleModel Software",
+      "position": "Web Developer",
+      "startDate": "2010-04-01",
+      "endDate": "2015-04-01",
+      "summary": "Worked with clients to build various web applications. Projects included a standalone kiosk for distributing media in second-world countries, an accident report downloader, weather forecasting application and several large medical related applications. Mentored younger developers one-on-one."
+    },
+    {
+      "name": "Gather Digital",
+      "position": "Senior Developer",
+      "startDate": "2015-04-01",
+      "endDate": "2016-10-31",
+      "summary": "Added a contact sharing feature for native Android app. Worked on custom-built CMS/API. Built in-house tooling for submitting apps to Apple's App Store and Google's Play Store. Implemented and streamlined many integration projects to pull client data from various third-party REST and SOAP APIs."
+    },
+    {
+      "name": "NetApp",
+      "position": "Senior Developer (Contractor)",
+      "startDate": "2017-02-01",
+      "endDate": "2018-06-30",
+      "summary": "Help develop a new tool which allows sales people to easily configure large enterprise server rooms for clients. Collaborated with an international team of developers. Built many React components and helper functions in a shared presentation library. Mentored younger developers.",
+      "highlights": [
+        "Built React presentation library.",
+        "Mentored younger developers on my team."
+      ]
+    },
+    {
+      "name": "Rivers Agency",
+      "position": "Senior Developer",
+      "startDate": "2018-07-15",
+      "endDate": "2021-04-14",
+      "summary": "Led developer team git training. Architected and helped build a distributed clinical management system for a local university. Managed and helped build REST and GraphQL APIs, data-driven static sites and component library. Implemented many smaller features and bug fixes for a variety of projects.",
+      "highlights": [
+        "Built a distributed clinical management system for a local university, including a custom OAuth2 provider for SSO.",
+        "Architected and implemented a custom frontend powered by GraphQL and React.",
+        "Helped maintain, test and improve multiple Magento powered sites.",
+        "Mentored younger developers."
+      ]
+    },
+    {
+      "name": "Lana",
+      "position": "Senior Frontend Developer",
+      "startDate": "2020-04-15",
+      "endDate": "2020-08-31",
+      "summary": "Debit bank account for the unbanked/underbanked with pawn loan management features. Developed new frontend architecture. Worked with team to deliver solutions allowing customers more flexibility for managing finances.",
+      "highlights": [
+        "Designed and implemented new modular frontend architecture.",
+        "Built first payment integration with a third-party payment processor for pawn loan extensions."
+      ]
+    },
+    {
+      "name": "EZCORP",
+      "position": "Senior Frontend Developer",
+      "startDate": "2020-09-01",
+      "endDate": "2026-07-10",
+      "summary": "Extensive work with React, Redux and TypeScript. Built a new frontend architecture for the company's pawn loan management system. Implemented new features and improved existing ones to enhance user experience. Collaborated with backend developers to integrate RESTful APIs and GraphQL endpoints. Worked with Design to implement two new design systems.",
+      "highlights": [
+        "Built current and new design system from scratch using React, TypeScript and Storybook.",
+        "Architected and implemented bespoke promotion system for different types of promotions including giveaways and fun interactive elements."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Online Courses and Personal Projects",
+      "area": "Self-Taught Programmer",
+      "studyType": "Self-Directed Learning",
+      "startDate": "2000-01-01",
+      "details": "Spent significant time learning programming languages, frameworks and tools through online courses, tutorials and personal projects. Built a portfolio of web applications and contributed to open-source projects."
+    },
+    {
+      "institution": "Wake Tech University",
+      "url": "https://www.waketech.edu/",
+      "area": "MySQL Database Design",
+      "studyType": "Certificate",
+      "startDate": "2006-09-01",
+      "endDate": "2007-12-31",
+      "details": "Earned a certificate in MySQL Database Design, gaining knowledge in database architecture, normalization and query optimization."
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native speaker"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Cosmology",
+      "keywords": ["Black Holes", "Stars", "Physics"]
+    },
+    {
+      "name": "Paleontology",
+      "keywords": ["Dinosaurs", "Fossils"]
+    },
+    {
+      "name": "Wildlife",
+      "keywords": ["Mustelidae", "Felidae"]
+    },
+    {
+      "name": "Video Games",
+      "keywords": ["Zelda", "Mario", "Minecraft", "Hytale"]
+    },
+    {
+      "name": "Travel",
+      "keywords": ["Exploration", "Cuisine"]
+    }
+  ],
+  "references": [
+    {
+      "name": "Felipe Sinning"
+    },
+    {
+      "name": "Alfredo Chico"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Peter King",
+      "position": "High School Science Teacher",
+      "company": "Calvary Christian School",
+      "quote": "Look at Thomas. Thomas thinks. Be like Thomas."
+    },
+    {
+      "name": "Josh Hill",
+      "position": "Software Engineer / UI & UX Lead",
+      "company": "NetApp",
+      "quote": "It was great getting to work with you and learn a lot about nuances in CSS/browser compatibility especially. You taught me a good bit there. Thanks for all the hard work and I wish you well wherever you end up next."
+    },
+    {
+      "name": "Felipe Sinning",
+      "position": "Director of Digital Products",
+      "company": "EZCORP",
+      "quote": "Thomas is well engaged with the team and listens with empathy and sincere interest to others. Thomas does not shy away from work that may be tedious in nature and is very vocal about ensuring that our UX is up to the highest standards."
+    },
+    {
+      "name": "Sadeck Yarou N'Gobi",
+      "position": "Engineering Manager, Backend Engineer",
+      "company": "EZCORP",
+      "quote": "Thank you for your hard work. We are really grateful to have you on the team."
+    },
+    {
+      "name": "Alfredo Chico",
+      "position": "Product Designer",
+      "company": "EZCORP",
+      "quote": "You are by far the best engineer I've ever had the pleasure to work with."
+    },
+    {
+      "name": "Alfredo Chico",
+      "position": "Product Designer",
+      "company": "EZCORP",
+      "quote": "Not only are you a great engineer, you're also a great person."
+    },
+    {
+      "name": "María Renee Avila",
+      "position": "Senior Product Manager",
+      "company": "EZCORP",
+      "quote": "Working with you was fantastic and I truly believe we did some great stuff while working together."
+    },
+    {
+      "name": "Monica Giselle Padilla Lezama",
+      "position": "CRO Product Manager",
+      "company": "EZCORP",
+      "quote": "You are an excellent person and worker."
+    }
+  ],
+  "projects": [
+    {
+      "name": "IsItTheWeekendYet?",
+      "type": "Website (personal)",
+      "url": "https://www.isittheweekendyet.com/"
+    },
+    {
+      "name": "ravinggenius.com",
+      "type": "Website (personal)",
+      "url": "https://www.ravinggenius.com/"
+    },
+    {
+      "name": "Rip",
+      "type": "Programming Language",
+      "url": "https://github.com/rip-lang/rip"
+    },
+    {
+      "name": "MCNC",
+      "type": "Website (professional)",
+      "url": "https://www.mcnc.org/"
+    },
+    {
+      "name": "EZ+",
+      "type": "Web App (professional)",
+      "url": "https://app.ezplus.com/"
+    },
+    {
+      "name": "Minecraft Tools",
+      "type": "Website (personal)"
+    }
+  ]
+}
