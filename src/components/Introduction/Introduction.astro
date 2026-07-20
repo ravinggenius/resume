@@ -1,0 +1,110 @@
+---
+import resume from "@/data/resume.json";
+---
+
+<style>
+	.root {
+		display: grid;
+		grid-gap: 2ch;
+		grid-template-areas:
+			"header"
+			"body"
+			"nav";
+
+		@media print, screen and (min-width: 520px) {
+			grid-template-areas: "header body" "header nav";
+			grid-template-columns: 1fr max-content;
+		}
+	}
+
+	header {
+		grid-area: header;
+		writing-mode: unset;
+	}
+
+	.name {
+		grid-area: name;
+		margin-inline-end: 2ch;
+	}
+
+	.title {
+		color: #777777;
+		display: block;
+		grid-area: title;
+	}
+
+	nav {
+		grid-area: nav;
+	}
+
+	address {
+		font-style: normal;
+	}
+
+	ul {
+		display: flex;
+		flex-direction: row;
+		gap: 2.5ch;
+		list-style: none;
+	}
+
+	.body {
+		grid-area: body;
+
+		@media print, screen and (min-width: 520px) {
+			text-align: end;
+		}
+	}
+</style>
+
+<section class="root">
+	<header>
+		<h1 class="name">{resume.basics.name}</h1>
+		<p class="title">{resume.basics.label}</p>
+	</header>
+
+	<section class="body">
+		<address>
+			{resume.basics.location.city}, {resume.basics.location.region}
+		</address>
+		<address>
+			<a href={`mailto:${resume.basics.email}`}>{resume.basics.email}</a>
+		</address>
+		<address>
+			<a href={`tel:${resume.basics.phone}`}>{resume.basics.phone}</a>
+		</address>
+		<address>
+			<a
+				href={resume.basics.url}
+				rel="noopener noreferrer"
+				target="_blank"
+			>
+				{
+					resume.basics.url
+						.replace(/^https?:\/\//, "")
+						.replace(/\/$/, "")
+				}
+			</a>
+		</address>
+	</section>
+
+	{
+		resume.basics.profiles?.length > 0 ? (
+			<nav>
+				<ul>
+					{resume.basics.profiles.map((profile) => (
+						<li>
+							<a
+								href={profile.url}
+								rel="noopener noreferrer"
+								target="_blank"
+							>
+								{profile.network}
+							</a>
+						</li>
+					))}
+				</ul>
+			</nav>
+		) : null
+	}
+</section>
