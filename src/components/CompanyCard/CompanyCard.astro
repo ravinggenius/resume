@@ -1,0 +1,114 @@
+---
+import { normalizeDate } from "@/utilities/normalize-date";
+
+import DateRange from "../DateRange/DateRange.astro";
+import Markdown from "../Markdown/Markdown.astro";
+
+interface Props {
+	highlights?: Array<string>;
+	name: string;
+	title: string;
+	startedAt: string;
+	stoppedAt?: string;
+	summary: string;
+}
+
+const {
+	highlights = [],
+	name,
+	title,
+	startedAt,
+	stoppedAt,
+	summary
+} = Astro.props;
+---
+
+<style>
+	.root {
+		display: grid;
+		gap: 0.5rem;
+		grid-template-areas:
+			"facts"
+			"summary"
+			"highlights";
+	}
+
+	.name {
+		grid-area: name;
+	}
+
+	.title {
+		color: #777777;
+		display: block;
+		grid-area: title;
+		word-wrap: wrap;
+	}
+
+	.range {
+		display: inline-block;
+		grid-area: range;
+
+		@media print, screen and (min-width: 400px) {
+			justify-self: end;
+			text-align: end;
+		}
+	}
+
+	.facts {
+		align-items: baseline;
+		display: grid;
+		gap: 1ch;
+		grid-area: facts;
+		grid-template-areas:
+			"name"
+			"title"
+			"range";
+
+		@media screen and (min-width: 400px) {
+			grid-template-areas:
+				"name name"
+				"title range";
+			grid-template-columns: fit-content 1fr;
+		}
+
+		@media print, screen and (min-width: 550px) {
+			grid-template-areas: "name title range";
+			grid-template-columns: max-content max-content 1fr;
+		}
+	}
+
+	.summary {
+		grid-area: summary;
+	}
+
+	.highlights {
+		grid-area: highlights;
+		list-style-type: disclosure-closed;
+	}
+</style>
+
+<article class="root">
+	<header class="facts">
+		<h3 class="name">{name}</h3>
+
+		<span class="title">{title}</span>
+
+		<DateRange
+			class="range"
+			startedOn={normalizeDate(startedAt)}
+			stoppedOn={stoppedAt ? normalizeDate(stoppedAt) : undefined}
+		/>
+	</header>
+
+	<Markdown as="section" class="summary" content={summary} />
+
+	{
+		highlights.length > 0 ? (
+			<ul class="highlights">
+				{highlights.map((highlight) => (
+					<li>{highlight}</li>
+				))}
+			</ul>
+		) : null
+	}
+</article>

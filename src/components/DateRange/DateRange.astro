@@ -1,0 +1,36 @@
+---
+import { format, formatISO } from "date-fns";
+
+interface Props {
+	class?: string;
+	startedOn: Date;
+	stoppedOn?: Date;
+}
+
+const { class: className, startedOn, stoppedOn, ...attrs } = Astro.props;
+
+const DATE_FORMAT = "MMMM yyyy";
+---
+
+<style>
+	.root {
+		color: #777777;
+	}
+
+	.start,
+	.stop {
+		white-space: nowrap;
+	}
+</style>
+
+<time
+	{...attrs}
+	class:list={["root", className]}
+	datetime={`${formatISO(startedOn, { representation: "date" })}/${stoppedOn ? formatISO(stoppedOn, { representation: "date" }) : ".."}`}
+>
+	<span class="start">{format(startedOn, DATE_FORMAT)}</span>
+	{" - "}
+	<span class="stop"
+		>{stoppedOn ? format(stoppedOn, DATE_FORMAT) : "present"}</span
+	>
+</time>
