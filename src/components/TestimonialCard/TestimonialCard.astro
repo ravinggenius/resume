@@ -1,0 +1,80 @@
+---
+import Markdown from "../Markdown/Markdown.astro";
+
+interface Props {
+	name: string;
+	position: string;
+	company: string;
+	quote: string;
+}
+
+const { name, position, company, quote } = Astro.props;
+---
+
+<style>
+	.root {
+		display: grid;
+		gap: 0.5rem;
+		grid-template-areas:
+			"facts"
+			"quote";
+	}
+
+	.position {
+		grid-area: position;
+	}
+
+	.company {
+		color: #777777;
+		display: block;
+		grid-area: company;
+		word-wrap: wrap;
+	}
+
+	.facts {
+		align-items: baseline;
+		display: grid;
+		gap: 1ch;
+		grid-area: facts;
+		grid-template-areas:
+			"position"
+			"company";
+
+		@media screen and (min-width: 400px) {
+			grid-template-columns: fit-content 1fr;
+		}
+
+		@media print, screen and (min-width: 550px) {
+			grid-template-areas: "position company";
+			grid-template-columns: max-content max-content 1fr;
+		}
+	}
+
+	.quote {
+		grid-area: quote;
+	}
+
+	:global(blockquote) {
+		position: relative;
+
+		&::before {
+			alignment-baseline: text-top;
+			color: #777777;
+			content: "“";
+			font-size: 36px;
+			inset-block-start: -0.2em;
+			inset-inline-start: -1ch;
+			position: absolute;
+		}
+	}
+</style>
+
+<article class="root">
+	<header class="facts">
+		<h3 class="position">{position}</h3>
+
+		<span class="company">{company}</span>
+	</header>
+
+	<Markdown as="section" class="quote" content={quote} />
+</article>
