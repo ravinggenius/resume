@@ -5,7 +5,7 @@
     "email": "thomas.ingram@gmail.com",
     "phone": "+19194496305",
     "url": "https://www.ravinggenius.com/",
-    "summary": "Self-taught full-stack web developer with a strong desire for new challenges. Build, contribute to and maintain open source projects. Maintain several sites, some built from scratch and some CMS-based. Attend trade meetings and conferences regularly. Mentor junior developers. Open source work hosted on GitHub. Many people across several companies have told me how much they appreciate working with me and how much they have learned from me.",
+    "summary": "Senior full-stack developer with 15+ years building and architecting web applications, roughly split between frontend and backend work - from database design and SQL to CSS and polished frontend interfaces. Deep experience with React and TypeScript, having built and maintained design systems used across enterprise products, with additional backend experience in Ruby and C#, and integrating REST and GraphQL APIs. Track record of leading architecture decisions and mentoring junior developers, equally effective owning projects independently or driving them within highly collaborative, cross-functional teams.",
     "location": {
       "city": "Greater Raleigh Area",
       "countryCode": "US",
@@ -40,31 +40,43 @@
       "position": "Web Developer",
       "startDate": "2007-01-01",
       "endDate": "2010-03-31",
-      "summary": "Configure, build and maintain websites and web applications for clients. Advocate for test-driven development and other best practices."
+      "summary": "Configured, built, and maintained websites and web applications for clients, advocating for test-driven development and other engineering best practices."
     },
     {
       "name": "RoleModel Software",
       "position": "Web Developer",
       "startDate": "2010-04-01",
       "endDate": "2015-04-01",
-      "summary": "Worked with clients to build various web applications. Projects included a standalone kiosk for distributing media in second-world countries, an accident report downloader, weather forecasting application and several large medical related applications. Mentored younger developers one-on-one."
+      "summary": "Delivered custom web applications for clients across a range of industries and supported the growth of junior developers.",
+      "highlights": [
+        "Built applications including a media-distribution kiosk, accident-report downloader, and weather forecasting tool.",
+        "Contributed to several large healthcare-related applications.",
+        "Mentored junior developers through one-on-one coaching."
+      ]
     },
     {
       "name": "Gather Digital",
       "position": "Senior Developer",
       "startDate": "2015-04-01",
       "endDate": "2016-10-31",
-      "summary": "Added a contact sharing feature for native Android app. Worked on custom-built CMS/API. Built in-house tooling for submitting apps to Apple's App Store and Google's Play Store. Implemented and streamlined many integration projects to pull client data from various third-party REST and SOAP APIs."
+      "summary": "Developed product features, platform capabilities, and third-party integrations for mobile and web applications.",
+      "highlights": [
+        "Streamlined many integrations with third-party REST and SOAP APIs.",
+        "Added contact sharing to a native Android application.",
+        "Enhanced a custom CMS and API platform.",
+        "Built internal tooling for submitting apps to the Apple App Store and Google Play.",
+        "Built custom photo wall powered by specific Instagram keywords."
+      ]
     },
     {
       "name": "NetApp",
       "position": "Senior Developer (Contractor)",
       "startDate": "2017-02-01",
       "endDate": "2018-06-30",
-      "summary": "Help develop a new tool which allows sales people to easily configure large enterprise server rooms for clients. Collaborated with an international team of developers. Built many React components and helper functions in a shared presentation library. Mentored younger developers.",
+      "summary": "Helped develop a tool enabling sales teams to configure large enterprise server rooms for clients, collaborating with an international team of developers.",
       "highlights": [
-        "Built React presentation library.",
-        "Mentored younger developers on my team."
+        "Built a React presentation library shared across the team",
+        "Mentored junior developers on the team"
       ]
     },
     {
@@ -72,12 +84,14 @@
       "position": "Senior Developer",
       "startDate": "2018-07-15",
       "endDate": "2021-04-14",
-      "summary": "Led developer team git training. Architected and helped build a distributed clinical management system for a local university. Managed and helped build REST and GraphQL APIs, data-driven static sites and component library. Implemented many smaller features and bug fixes for a variety of projects.",
+      "summary": "Led technical delivery across client platforms, APIs, frontend systems, and developer practices.",
       "highlights": [
+        "Led Git training for the development team.",
         "Built a distributed clinical management system for a local university, including a custom OAuth2 provider for SSO.",
         "Architected and implemented a custom frontend powered by GraphQL and React.",
-        "Helped maintain, test and improve multiple Magento powered sites.",
-        "Mentored younger developers."
+        "Managed and developed REST and GraphQL APIs, data-driven static sites, and a component library.",
+        "Maintained, tested, and improved multiple Magento sites.",
+        "Mentored junior developers."
       ]
     },
     {
@@ -85,10 +99,11 @@
       "position": "Senior Frontend Developer",
       "startDate": "2020-04-15",
       "endDate": "2020-08-31",
-      "summary": "Debit bank account for the unbanked/underbanked with pawn loan management features. Developed new frontend architecture. Worked with team to deliver solutions allowing customers more flexibility for managing finances.",
+      "summary": "Developed frontend capabilities for a financial product serving unbanked and underbanked customers.",
       "highlights": [
         "Designed and implemented new modular frontend architecture.",
-        "Built first payment integration with a third-party payment processor for pawn loan extensions."
+        "Built the first third-party payment integration for pawn-loan extensions.",
+        "Delivered customer-facing tools that expanded financial-management flexibility."
       ]
     },
     {
@@ -96,10 +111,13 @@
       "position": "Senior Frontend Developer",
       "startDate": "2020-09-01",
       "endDate": "2026-07-10",
-      "summary": "Extensive work with React, Redux and TypeScript. Built a new frontend architecture for the company's pawn loan management system. Implemented new features and improved existing ones to enhance user experience. Collaborated with backend developers to integrate RESTful APIs and GraphQL endpoints. Worked with Design to implement two new design systems.",
+      "summary": "Led frontend architecture and feature development for a pawn-loan management platform, partnering closely with backend and design teams.",
       "highlights": [
-        "Built current and new design system from scratch using React, TypeScript and Storybook.",
-        "Architected and implemented bespoke promotion system for different types of promotions including giveaways and fun interactive elements."
+        "Built and evolved two design systems using React, TypeScript, and Storybook.",
+        "Architected a new frontend architecture for the pawn-loan management system.",
+        "Integrated REST APIs endpoints across customer-facing features.",
+        "Created a configurable promotions platform supporting giveaways and interactive experiences.",
+        "Adopted AI-first development practices toward the end of the engagement."
       ]
     }
   ],
@@ -142,8 +160,10 @@
     {
       "family": "Client",
       "tags": [
+        { "name": "Android", "proficiency": 1 },
         { "name": "CSS", "proficiency": 4 },
         { "name": "HTML", "proficiency": 4 },
+        { "name": "iOS", "proficiency": 1 },
         { "name": "Next", "proficiency": 4 },
         { "name": "Redux", "proficiency": 4 },
         { "name": "Redux Saga", "proficiency": 4 },
@@ -182,7 +202,7 @@
         { "name": "OAuth2", "proficiency": 3 },
         { "name": "OOP", "proficiency": 3 },
         { "name": "REST", "proficiency": 5 },
-        { "name": "Testing", "proficiency": 3 }
+        { "name": "Testing", "proficiency": 4 }
       ]
     }
   ],
