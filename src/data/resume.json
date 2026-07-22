@@ -122,6 +122,66 @@
       "fluency": "Native speaker"
     }
   ],
+  "skills": [
+    {
+      "family": "Languages",
+      "tags": [
+        { "name": "C#", "proficiency": 2 },
+        { "name": "Elixir", "proficiency": 1 },
+        { "name": "JavaScript", "proficiency": 4 },
+        { "name": "PHP", "proficiency": 4 },
+        { "name": "Ruby", "proficiency": 4 },
+        { "name": "SQL", "proficiency": 4 },
+        { "name": "TypeScript", "proficiency": 5 }
+      ]
+    },
+    {
+      "family": "Client",
+      "tags": [
+        { "name": "CSS", "proficiency": 4 },
+        { "name": "HTML", "proficiency": 4 },
+        { "name": "Next", "proficiency": 4 },
+        { "name": "Redux", "proficiency": 4 },
+        { "name": "Redux Saga", "proficiency": 4 },
+        { "name": "SASS", "proficiency": 4 }
+      ]
+    },
+    {
+      "family": "Server",
+      "tags": [
+        { "name": "Astro", "proficiency": 3 },
+        { "name": "Express", "proficiency": 4 },
+        { "name": "Laravel", "proficiency": 1 },
+        { "name": "Next", "proficiency": 4 },
+        { "name": "Node", "proficiency": 3 },
+        { "name": "Ruby On Rails", "proficiency": 3 }
+      ]
+    },
+    {
+      "family": "Databases",
+      "tags": [
+        { "name": "Mongo", "proficiency": 3 },
+        { "name": "MSSQL", "proficiency": 2 },
+        { "name": "MySQL", "proficiency": 3 },
+        { "name": "Oracle", "proficiency": 1 },
+        { "name": "Postgres", "proficiency": 4 }
+      ]
+    },
+    {
+      "family": "Engineering",
+      "tags": [
+        { "name": "Accessibility", "proficiency": 4 },
+        { "name": "FP", "proficiency": 4 },
+        { "name": "git", "proficiency": 5 },
+        { "name": "Internationalization", "proficiency": 5 },
+        { "name": "Mentoring", "proficiency": 4 },
+        { "name": "OAuth2", "proficiency": 3 },
+        { "name": "OOP", "proficiency": 3 },
+        { "name": "REST", "proficiency": 5 },
+        { "name": "Testing", "proficiency": 3 }
+      ]
+    }
+  ],
   "interests": [
     {
       "name": "Cosmology",

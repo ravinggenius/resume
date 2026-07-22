@@ -1,0 +1,16 @@
+---
+import resume from "@/data/resume.json";
+
+import Section from "../Section/Section.astro";
+import SkillCard from "../SkillCard/SkillCard.astro";
+---
+
+{
+	resume.skills?.length > 0 ? (
+		<Section title="Skills">
+			{resume.skills.map((skill) => (
+				<SkillCard {...skill} />
+			))}
+		</Section>
+	) : null
+}
