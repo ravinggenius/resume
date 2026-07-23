@@ -1,0 +1,43 @@
+---
+import { parseISO } from "date-fns";
+
+import resume from "@/data/resume.json";
+import { countMonthsAgo } from "@/utilities/count-months-ago";
+
+import CompanyCard from "../CompanyCard/CompanyCard.astro";
+import Section from "../Section/Section.astro";
+---
+
+<style>
+	ol {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		list-style-type: none;
+	}
+</style>
+
+<Section title="Experience">
+	<ol>
+		{
+			resume.work
+				.toSorted(
+					(a, b) =>
+						countMonthsAgo(parseISO(a.startDate)) -
+						countMonthsAgo(parseISO(b.startDate))
+				)
+				.map((job) => (
+					<li>
+						<CompanyCard
+							highlights={job.highlights}
+							name={job.name}
+							title={job.position}
+							startedAt={job.startDate}
+							stoppedAt={job.endDate}
+							summary={job.summary}
+						/>
+					</li>
+				))
+		}
+	</ol>
+</Section>

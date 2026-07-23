@@ -1,0 +1,49 @@
+---
+import rehypeStringify from "rehype-stringify";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
+import { unified } from "unified";
+
+interface Props extends astroHTML.JSX.HTMLAttributes {
+	content: string;
+	as?: string;
+}
+
+const { as: Tag = "div", class: className, content, ...attrs } = Astro.props;
+
+const file = await unified()
+	.use(remarkParse)
+	.use(remarkRehype)
+	.use(rehypeStringify)
+	.process(content);
+
+const html = String(file);
+---
+
+<style>
+	@media print {
+		.markdown :global(a::before) {
+			content: "[";
+		}
+
+		.markdown :global(a::after) {
+			content: "(" attr(href) ")";
+		}
+	}
+
+	.markdown :global(blockquote) {
+		position: relative;
+
+		&::before {
+			alignment-baseline: text-top;
+			color: #777777;
+			content: "“";
+			font-size: 36px;
+			inset-block-start: -0.2em;
+			inset-inline-start: -1ch;
+			position: absolute;
+		}
+	}
+</style>
+
+<Tag class:list={["markdown", className]} {...attrs} set:html={html} />

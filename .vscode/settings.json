@@ -1,0 +1,11 @@
+{
+  "prettier.documentSelectors": [
+    "**/*.astro",
+    "**/*.json",
+    "**/*.toml",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "typescript.tsdk": "node_modules/typescript/lib"
+}

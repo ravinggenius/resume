@@ -1,0 +1,10 @@
+---
+import resume from "@/data/resume.json";
+
+import Markdown from "../Markdown/Markdown.astro";
+import Section from "../Section/Section.astro";
+---
+
+<Section title="Summary">
+	<Markdown content={resume.basics.summary} />
+</Section>

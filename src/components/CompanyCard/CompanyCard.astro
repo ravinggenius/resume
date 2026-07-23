@@ -1,0 +1,52 @@
+---
+import { normalizeDate } from "@/utilities/normalize-date";
+
+import DetailCard from "../DetailCard/DetailCard.astro";
+import Markdown from "../Markdown/Markdown.astro";
+
+interface Props {
+	highlights?: Array<string>;
+	name: string;
+	title: string;
+	startedAt: string;
+	stoppedAt?: string;
+	summary: string;
+}
+
+const {
+	highlights = [],
+	name,
+	title,
+	startedAt,
+	stoppedAt,
+	summary
+} = Astro.props;
+---
+
+<style>
+	.highlights {
+		list-style-type: disclosure-closed;
+		margin-block-start: 1em;
+	}
+</style>
+
+<DetailCard
+	title={title}
+	subTitle={name}
+	dateRange={{
+		startedOn: normalizeDate(startedAt),
+		stoppedOn: stoppedAt ? normalizeDate(stoppedAt) : undefined
+	}}
+>
+	<Markdown content={summary} />
+
+	{
+		highlights.length > 0 ? (
+			<ul class="highlights">
+				{highlights.map((highlight) => (
+					<li>{highlight}</li>
+				))}
+			</ul>
+		) : null
+	}
+</DetailCard>

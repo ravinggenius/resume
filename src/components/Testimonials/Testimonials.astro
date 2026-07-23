@@ -1,0 +1,27 @@
+---
+import resume from "@/data/resume.json";
+
+import Section from "../Section/Section.astro";
+import TestimonialCard from "../TestimonialCard/TestimonialCard.astro";
+---
+
+<style>
+	ol {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		list-style-type: none;
+	}
+</style>
+
+<Section title="Testimonials">
+	<ol>
+		{
+			resume.testimonials.map((testimonial) => (
+				<li>
+					<TestimonialCard {...testimonial} />
+				</li>
+			))
+		}
+	</ol>
+</Section>

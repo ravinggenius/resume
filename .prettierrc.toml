@@ -1,0 +1,16 @@
+plugins = ["prettier-plugin-astro", "@ianvs/prettier-plugin-sort-imports"]
+
+importOrder = ["<BUILTIN_MODULES>", "", "<THIRD_PARTY_MODULES>", "", "^@/(.*)$", "", "^../", "", "^./"]
+importOrderCaseSensitive = false
+quoteProps = "consistent"
+tabWidth = 4
+trailingComma = "none"
+useTabs = true
+
+[[overrides]]
+files = ["*.astro"]
+options = { parser = "astro" }
+
+[[overrides]]
+files = ["*.json", "*.md", "*.mdx", "*.toml", "*.yaml", "*.yml"]
+options = { tabWidth = 2, useTabs = false }

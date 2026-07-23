@@ -1,0 +1,16 @@
+---
+import DetailCard from "../DetailCard/DetailCard.astro";
+import Markdown from "../Markdown/Markdown.astro";
+
+interface Props {
+	position: string;
+	company: string;
+	quote: string;
+}
+
+const { position, company, quote } = Astro.props;
+---
+
+<DetailCard title={position} subTitle={company}>
+	<Markdown content={quote} />
+</DetailCard>

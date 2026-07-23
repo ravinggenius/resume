@@ -1,22 +1,43 @@
-## Gatsby Résumé
+# Astro Starter Kit: Minimal
 
-Single-page static résumé site, built with [Gatsby](https://www.gatsbyjs.org/). Please fork and customize (or not). I do hope you find it helpful. Improvements are welcome!
+```sh
+npm create astro@latest -- --template minimal
+```
 
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-### Getting Started
+## 🚀 Project Structure
 
-* Run `npm install`
-* Run `npm run develop` to start a hot-reloading development server
-* Copy `src/data/contact.md-sample` to `src/data/contact.md` and fill in with your details
-* Copy `src/data/companies/acme.md-sample` a few times and fill in work history (one company per file). One of the goals of this project is to fit on a single page PDF, so don't go overboard
+Inside of your Astro project, you'll see the following folders and files:
 
+```text
+/
+├── public/
+├── src/
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
 
-### Publish
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-Once you are happy with your résumé, run `npm run build` to compile all assets to `public`. Copy the `public` directory to any static host (I like Netlify) and you're done!
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
+Any static assets, like images, can be placed in the `public/` directory.
 
-### TODO
+## 🧞 Commands
 
-* [ ] Insert last updated at and maybe some other metadata when building (`git describe`, maybe https://www.npmjs.com/package/gatsby-source-git)
-* [ ] Remove calls to `dangerouslySetInnerHTML` in favor of `rehype-react` or MDX
+All commands are run from the root of the project, from a terminal:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

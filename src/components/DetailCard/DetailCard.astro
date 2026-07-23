@@ -1,0 +1,65 @@
+---
+import DateRange from "../DateRange/DateRange.astro";
+
+interface DateRange {
+	startedOn: Date;
+	stoppedOn?: Date;
+}
+
+interface Props {
+	class?: string;
+	dateRange?: DateRange;
+	subTitle: string;
+	title: string;
+}
+
+const { class: className, dateRange, subTitle, title, ...attrs } = Astro.props;
+---
+
+<style>
+	.title,
+	.sub-title {
+		display: inline-block;
+	}
+
+	.header-layout {
+		align-items: baseline;
+		display: flex;
+		flex-direction: row;
+		flex-grow: 1;
+		flex-wrap: wrap;
+		gap: 1ch;
+		justify-content: space-between;
+	}
+
+	.header {
+		align-items: baseline;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 1ch;
+		grid-area: header;
+	}
+
+	.detail-card {
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+	}
+</style>
+
+<article class:list={["detail-card", className]} {...attrs}>
+	<header class="header">
+		<h3 class="title">{title}</h3>
+
+		<div class="header-layout">
+			<span class="sub-title">{subTitle}</span>
+
+			{dateRange ? <DateRange {...dateRange} /> : null}
+		</div>
+	</header>
+
+	<section>
+		<slot />
+	</section>
+</article>

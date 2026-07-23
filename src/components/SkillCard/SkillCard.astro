@@ -1,0 +1,82 @@
+---
+interface SkillTag {
+	name: string;
+	proficiency: 1 | 2 | 3 | 4 | 5;
+}
+
+interface Props {
+	family: string;
+	tags: Array<SkillTag>;
+}
+
+const { family, tags } = Astro.props;
+
+const ADEPT_STAR = "★";
+const INEPT_STAR = "☆";
+
+const sortedTags = tags.toSorted((a, b) => {
+	const prof = b.proficiency - a.proficiency;
+
+	if (prof !== 0) {
+		return prof;
+	}
+
+	return a.name.localeCompare(b.name);
+});
+---
+
+<style>
+	.title {
+	}
+
+	.tag-name {
+	}
+
+	.tag-proficiency {
+	}
+
+	.tag {
+		display: flex;
+		flex-direction: row;
+		gap: 0.5ch;
+	}
+
+	.list {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 0 2ch;
+	}
+
+	.body {
+	}
+
+	.root {
+	}
+</style>
+
+<article class="root">
+	<header><h3 class="title">{family}</h3></header>
+
+	<section class="body">
+		<dl class="list">
+			{
+				sortedTags.map(({ name, proficiency }) => (
+					<div class="tag">
+						<dt class="tag-name">{name}</dt>
+						<dd class="tag-proficiency">
+							{Array.from(
+								{ length: proficiency },
+								() => ADEPT_STAR
+							)}
+							{Array.from(
+								{ length: 5 - proficiency },
+								() => INEPT_STAR
+							)}
+						</dd>
+					</div>
+				))
+			}
+		</dl>
+	</section>
+</article>

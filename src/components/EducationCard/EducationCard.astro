@@ -1,0 +1,29 @@
+---
+import { normalizeDate } from "@/utilities/normalize-date";
+
+import DetailCard from "../DetailCard/DetailCard.astro";
+import Markdown from "../Markdown/Markdown.astro";
+
+interface Props {
+	institution: string;
+	area: string;
+	studyType?: string;
+	startDate: string;
+	endDate?: string;
+	details: string;
+}
+
+const { institution, area, studyType, startDate, endDate, details } =
+	Astro.props;
+---
+
+<DetailCard
+	dateRange={{
+		startedOn: normalizeDate(startDate),
+		stoppedOn: endDate ? normalizeDate(endDate) : undefined
+	}}
+	title={area}
+	subTitle={studyType ? `${institution} (${studyType})` : institution}
+>
+	<Markdown content={details} />
+</DetailCard>
