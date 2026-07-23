@@ -13,19 +13,15 @@ const DATE_FORMAT = "MMMM yyyy";
 ---
 
 <style>
-	.root {
+	.date-range {
 		color: #777777;
-	}
-
-	.start,
-	.stop {
-		white-space: nowrap;
+		text-wrap: nowrap;
 	}
 </style>
 
 <time
 	{...attrs}
-	class:list={["root", className]}
+	class:list={["date-range", className]}
 	datetime={`${formatISO(startedOn, { representation: "date" })}/${stoppedOn ? formatISO(stoppedOn, { representation: "date" }) : ".."}`}
 >
 	<span class="start">{format(startedOn, DATE_FORMAT)}</span>

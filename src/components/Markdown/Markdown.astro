@@ -30,6 +30,20 @@ const html = String(file);
 			content: "(" attr(href) ")";
 		}
 	}
+
+	.markdown :global(blockquote) {
+		position: relative;
+
+		&::before {
+			alignment-baseline: text-top;
+			color: #777777;
+			content: "“";
+			font-size: 36px;
+			inset-block-start: -0.2em;
+			inset-inline-start: -1ch;
+			position: absolute;
+		}
+	}
 </style>
 
 <Tag class:list={["markdown", className]} {...attrs} set:html={html} />
