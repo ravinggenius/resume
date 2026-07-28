@@ -11,9 +11,6 @@ interface Props {
 
 const { family, tags } = Astro.props;
 
-const ADEPT_STAR = "★";
-const INEPT_STAR = "☆";
-
 const sortedTags = tags.toSorted((a, b) => {
 	const prof = b.proficiency - a.proficiency;
 
@@ -29,16 +26,7 @@ const sortedTags = tags.toSorted((a, b) => {
 	.title {
 	}
 
-	.tag-name {
-	}
-
-	.tag-proficiency {
-	}
-
 	.tag {
-		display: flex;
-		flex-direction: row;
-		gap: 0.5ch;
 	}
 
 	.list {
@@ -46,12 +34,22 @@ const sortedTags = tags.toSorted((a, b) => {
 		flex-direction: row;
 		flex-wrap: wrap;
 		gap: 0 2ch;
+		list-style-type: none;
 	}
 
 	.body {
 	}
 
 	.root {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	@container (inline-size >= 424px) {
+		.root:last-child {
+			grid-column: span 2;
+		}
 	}
 </style>
 
@@ -59,24 +57,8 @@ const sortedTags = tags.toSorted((a, b) => {
 	<header><h3 class="title">{family}</h3></header>
 
 	<section class="body">
-		<dl class="list">
-			{
-				sortedTags.map(({ name, proficiency }) => (
-					<div class="tag">
-						<dt class="tag-name">{name}</dt>
-						<dd class="tag-proficiency">
-							{Array.from(
-								{ length: proficiency },
-								() => ADEPT_STAR
-							)}
-							{Array.from(
-								{ length: 5 - proficiency },
-								() => INEPT_STAR
-							)}
-						</dd>
-					</div>
-				))
-			}
-		</dl>
+		<ol class="list">
+			{sortedTags.map(({ name }) => <li class="tag">{name}</li>)}
+		</ol>
 	</section>
 </article>

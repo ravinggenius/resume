@@ -5,9 +5,18 @@ import Section from "../Section/Section.astro";
 import SkillCard from "../SkillCard/SkillCard.astro";
 ---
 
+<style>
+	.skill-categories > :global(.body) {
+		container-type: inline-size;
+		display: grid;
+		gap: 1rem 3ch;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	}
+</style>
+
 {
 	resume.skills?.length > 0 ? (
-		<Section title="Skills">
+		<Section class="skill-categories" title="Skills">
 			{resume.skills.map((skill) => (
 				<SkillCard {...skill} />
 			))}
