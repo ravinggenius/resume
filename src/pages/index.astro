@@ -32,6 +32,7 @@ import resume from "@/data/resume.json";
 			body {
 				font-family:
 					"Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+				line-height: 1.5;
 			}
 
 			a {
@@ -46,6 +47,12 @@ import resume from "@/data/resume.json";
 				}
 			}
 
+			h1,
+			h2,
+			h3 {
+				color: oklch(28% 0.018 250);
+			}
+
 			li,
 			p {
 				max-block-size: 62ch;
@@ -58,13 +65,24 @@ import resume from "@/data/resume.json";
 			}
 
 			body {
+				color: oklch(34% 0.016 250);
 				margin: 2rem;
+
+				@media screen {
+					background-color: oklch(98.5% 0.004 250);
+				}
 			}
 
 			main {
 				display: flex;
 				flex-direction: column;
-				gap: 2rem;
+				gap: 3rem;
+				margin-inline: auto;
+				max-inline-size: 960px;
+
+				@media print {
+					gap: 2rem;
+				}
 			}
 		</style>
 	</head>
