@@ -14,14 +14,16 @@ import TestimonialCard from "../TestimonialCard/TestimonialCard.astro";
 	}
 </style>
 
-<Section title="Testimonials">
-	<ol>
-		{
-			resume.testimonials.map((testimonial) => (
-				<li>
-					<TestimonialCard {...testimonial} />
-				</li>
-			))
-		}
-	</ol>
-</Section>
+{
+	resume.testimonials.length > 0 ? (
+		<Section title="Testimonials">
+			<ol>
+				{resume.testimonials.map((testimonial) => (
+					<li>
+						<TestimonialCard {...testimonial} />
+					</li>
+				))}
+			</ol>
+		</Section>
+	) : null
+}

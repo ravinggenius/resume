@@ -17,27 +17,29 @@ import Section from "../Section/Section.astro";
 	}
 </style>
 
-<Section title="Experience">
-	<ol>
-		{
-			resume.work
-				.toSorted(
-					(a, b) =>
-						countMonthsAgo(parseISO(a.startDate)) -
-						countMonthsAgo(parseISO(b.startDate))
-				)
-				.map((job) => (
-					<li>
-						<CompanyCard
-							highlights={job.highlights}
-							name={job.name}
-							title={job.position}
-							startedAt={job.startDate}
-							stoppedAt={job.endDate}
-							summary={job.summary}
-						/>
-					</li>
-				))
-		}
-	</ol>
-</Section>
+{
+	resume.work.length > 0 ? (
+		<Section title="Experience">
+			<ol>
+				{resume.work
+					.toSorted(
+						(a, b) =>
+							countMonthsAgo(parseISO(a.startDate)) -
+							countMonthsAgo(parseISO(b.startDate))
+					)
+					.map((job) => (
+						<li>
+							<CompanyCard
+								highlights={job.highlights}
+								name={job.name}
+								title={job.position}
+								startedAt={job.startDate}
+								stoppedAt={job.endDate}
+								summary={job.summary}
+							/>
+						</li>
+					))}
+			</ol>
+		</Section>
+	) : null
+}
