@@ -1,0 +1,11 @@
+{
+  "name": "NetApp",
+  "position": "Senior Developer (Contractor)",
+  "startDate": "2017-02-01",
+  "endDate": "2018-06-30",
+  "summary": "Helped develop a tool enabling sales teams to configure large enterprise server rooms for clients, collaborating with an international team of developers.",
+  "highlights": [
+    "Built a React presentation library shared across the team",
+    "Mentored junior developers on the team"
+  ]
+}

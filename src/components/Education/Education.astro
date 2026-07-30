@@ -1,8 +1,10 @@
 ---
-import resume from "@/data/resume.json";
+import { getCollection } from "astro:content";
 
 import EducationCard from "../EducationCard/EducationCard.astro";
 import Section from "../Section/Section.astro";
+
+const educations = await getCollection("educations");
 ---
 
 <style>
@@ -15,12 +17,12 @@ import Section from "../Section/Section.astro";
 </style>
 
 {
-	resume.education?.length > 0 ? (
+	educations.length > 0 ? (
 		<Section title="Education">
 			<ol>
-				{resume.education.map((education) => (
+				{educations.map((education) => (
 					<li>
-						<EducationCard {...education} />
+						<EducationCard {...education.data} />
 					</li>
 				))}
 			</ol>

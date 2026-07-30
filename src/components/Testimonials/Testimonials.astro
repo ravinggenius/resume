@@ -1,8 +1,10 @@
 ---
-import resume from "@/data/resume.json";
+import { getCollection } from "astro:content";
 
 import Section from "../Section/Section.astro";
 import TestimonialCard from "../TestimonialCard/TestimonialCard.astro";
+
+const testimonials = await getCollection("testimonials");
 ---
 
 <style>
@@ -15,12 +17,12 @@ import TestimonialCard from "../TestimonialCard/TestimonialCard.astro";
 </style>
 
 {
-	resume.testimonials.length > 0 ? (
+	testimonials.length > 0 ? (
 		<Section title="Testimonials">
 			<ol>
-				{resume.testimonials.map((testimonial) => (
+				{testimonials.map((testimonial) => (
 					<li>
-						<TestimonialCard {...testimonial} />
+						<TestimonialCard {...testimonial.data} />
 					</li>
 				))}
 			</ol>

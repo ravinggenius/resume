@@ -1,11 +1,13 @@
 ---
+import { getCollection } from "astro:content";
 import { parseISO } from "date-fns";
 
-import resume from "@/data/resume.json";
 import { countMonthsAgo } from "@/utilities/count-months-ago";
 
 import CompanyCard from "../CompanyCard/CompanyCard.astro";
 import Section from "../Section/Section.astro";
+
+const experiences = await getCollection("workExperiences");
 ---
 
 <style>
@@ -18,24 +20,22 @@ import Section from "../Section/Section.astro";
 </style>
 
 {
-	resume.work.length > 0 ? (
+	experiences.length > 0 ? (
 		<Section title="Experience">
 			<ol>
-				{resume.work
+				{experiences
 					.toSorted(
 						(a, b) =>
-							countMonthsAgo(parseISO(a.startDate)) -
-							countMonthsAgo(parseISO(b.startDate))
+							countMonthsAgo(parseISO(a.data.startDate)) -
+							countMonthsAgo(parseISO(b.data.startDate))
 					)
 					.map((job) => (
 						<li>
 							<CompanyCard
-								highlights={job.highlights}
-								name={job.name}
-								title={job.position}
-								startedAt={job.startDate}
-								stoppedAt={job.endDate}
-								summary={job.summary}
+								{...job.data}
+								title={job.data.position}
+								startedAt={job.data.startDate}
+								stoppedAt={job.data.endDate}
 							/>
 						</li>
 					))}

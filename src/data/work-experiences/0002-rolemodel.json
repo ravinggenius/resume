@@ -1,0 +1,13 @@
+{
+  "show": false,
+  "name": "RoleModel Software",
+  "position": "Web Developer",
+  "startDate": "2010-04-01",
+  "endDate": "2015-04-01",
+  "summary": "Delivered custom web applications for clients across a range of industries and supported the growth of junior developers.",
+  "highlights": [
+    "Built applications including a media-distribution kiosk, accident-report downloader, and weather forecasting tool.",
+    "Contributed to several large healthcare-related applications.",
+    "Mentored junior developers through one-on-one coaching."
+  ]
+}

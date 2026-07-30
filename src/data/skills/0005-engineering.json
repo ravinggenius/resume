@@ -1,0 +1,14 @@
+{
+  "family": "Engineering",
+  "tags": [
+    { "name": "Accessibility", "proficiency": 4 },
+    { "name": "FP", "proficiency": 4 },
+    { "name": "git", "proficiency": 5 },
+    { "name": "Internationalization", "proficiency": 5 },
+    { "name": "Mentoring", "proficiency": 4 },
+    { "name": "OAuth2", "proficiency": 3 },
+    { "name": "OOP", "proficiency": 3 },
+    { "name": "REST", "proficiency": 5 },
+    { "name": "Testing", "proficiency": 4 }
+  ]
+}

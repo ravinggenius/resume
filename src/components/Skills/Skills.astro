@@ -1,8 +1,10 @@
 ---
-import resume from "@/data/resume.json";
+import { getCollection } from "astro:content";
 
 import Section from "../Section/Section.astro";
 import SkillCard from "../SkillCard/SkillCard.astro";
+
+const skills = await getCollection("skills");
 ---
 
 <style>
@@ -15,10 +17,10 @@ import SkillCard from "../SkillCard/SkillCard.astro";
 </style>
 
 {
-	resume.skills?.length > 0 ? (
+	skills.length > 0 ? (
 		<Section class="skill-categories" title="Skills">
-			{resume.skills.map((skill) => (
-				<SkillCard {...skill} />
+			{skills.map((skill) => (
+				<SkillCard {...skill.data} />
 			))}
 		</Section>
 	) : null

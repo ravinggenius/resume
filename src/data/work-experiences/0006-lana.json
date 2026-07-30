@@ -1,0 +1,12 @@
+{
+  "name": "Lana",
+  "position": "Senior Frontend Developer",
+  "startDate": "2020-04-15",
+  "endDate": "2020-08-31",
+  "summary": "Developed frontend capabilities for a financial product serving unbanked and underbanked customers.",
+  "highlights": [
+    "Designed and implemented new modular frontend architecture.",
+    "Built the first third-party payment integration for pawn-loan extensions.",
+    "Delivered customer-facing tools that expanded financial-management flexibility."
+  ]
+}

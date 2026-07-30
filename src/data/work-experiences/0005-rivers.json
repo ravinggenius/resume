@@ -1,0 +1,15 @@
+{
+  "name": "Rivers Agency",
+  "position": "Senior Developer",
+  "startDate": "2018-07-15",
+  "endDate": "2020-04-14",
+  "summary": "Led technical delivery across client platforms, APIs, frontend systems, and developer practices.",
+  "highlights": [
+    "Led Git training for the development team.",
+    "Built a distributed clinical management system for a local university, including a custom OAuth2 provider for SSO.",
+    "Architected and implemented a custom frontend powered by GraphQL and React.",
+    "Managed and developed REST and GraphQL APIs, data-driven static sites, and a component library.",
+    "Maintained, tested, and improved multiple Magento sites.",
+    "Mentored junior developers."
+  ]
+}
