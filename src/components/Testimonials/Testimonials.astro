@@ -1,27 +1,21 @@
 ---
-import resume from "@/data/resume.json";
+import { getCollection, type CollectionEntry } from "astro:content";
 
+import CardListing from "../CardListing/CardListing.astro";
 import Section from "../Section/Section.astro";
 import TestimonialCard from "../TestimonialCard/TestimonialCard.astro";
+
+const testimonials = await getCollection("testimonials");
 ---
 
-<style>
-	ol {
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-		list-style-type: none;
-	}
-</style>
-
-<Section title="Testimonials">
-	<ol>
-		{
-			resume.testimonials.map((testimonial) => (
-				<li>
+{
+	testimonials.length > 0 ? (
+		<Section title="Testimonials">
+			<CardListing items={testimonials}>
+				{({ data: testimonial }: CollectionEntry<"testimonials">) => (
 					<TestimonialCard {...testimonial} />
-				</li>
-			))
-		}
-	</ol>
-</Section>
+				)}
+			</CardListing>
+		</Section>
+	) : null
+}

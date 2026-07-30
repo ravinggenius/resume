@@ -1,0 +1,14 @@
+{
+  "name": "EZCORP",
+  "position": "Senior Frontend Developer",
+  "startDate": "2020-09-01",
+  "endDate": "2026-07-10",
+  "summary": "Led frontend architecture and feature development for a pawn-loan management platform, partnering closely with backend and design teams.",
+  "highlights": [
+    "Built and evolved two design systems using React, TypeScript, and Storybook.",
+    "Architected a new frontend architecture for the pawn-loan management system.",
+    "Integrated REST APIs endpoints across customer-facing features.",
+    "Created a configurable promotions platform supporting giveaways and interactive experiences.",
+    "Adopted AI-first development practices toward the end of the engagement."
+  ]
+}

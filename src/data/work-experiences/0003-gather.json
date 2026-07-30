@@ -1,0 +1,14 @@
+{
+  "name": "Gather Digital",
+  "position": "Senior Developer",
+  "startDate": "2015-04-01",
+  "endDate": "2016-10-31",
+  "summary": "Developed product features, platform capabilities, and third-party integrations for mobile and web applications.",
+  "highlights": [
+    "Streamlined many integrations with third-party REST and SOAP APIs.",
+    "Added contact sharing to a native Android application.",
+    "Enhanced a custom CMS and API platform.",
+    "Built internal tooling for submitting apps to the Apple App Store and Google Play.",
+    "Built custom photo wall powered by specific Instagram keywords."
+  ]
+}

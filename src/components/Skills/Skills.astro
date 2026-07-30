@@ -1,25 +1,36 @@
 ---
-import resume from "@/data/resume.json";
+import { getCollection, type CollectionEntry } from "astro:content";
 
+import CardListing from "../CardListing/CardListing.astro";
 import Section from "../Section/Section.astro";
 import SkillCard from "../SkillCard/SkillCard.astro";
+
+const skills = await getCollection("skills");
 ---
 
 <style>
-	.skill-categories > :global(.body) {
+	.skill-card-listing {
 		container-type: inline-size;
 		display: grid;
 		gap: 1rem 3ch;
 		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+		@container (inline-size >= 424px) {
+			> :global(:last-child) {
+				grid-column: span 2;
+			}
+		}
 	}
 </style>
 
 {
-	resume.skills?.length > 0 ? (
+	skills.length > 0 ? (
 		<Section class="skill-categories" title="Skills">
-			{resume.skills.map((skill) => (
-				<SkillCard {...skill} />
-			))}
+			<CardListing class="skill-card-listing" items={skills}>
+				{({ data: skill }: CollectionEntry<"skills">) => (
+					<SkillCard {...skill} />
+				)}
+			</CardListing>
 		</Section>
 	) : null
 }

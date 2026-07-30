@@ -1,0 +1,10 @@
+{
+  "family": "Databases",
+  "tags": [
+    { "name": "Mongo", "proficiency": 3 },
+    { "name": "MSSQL", "proficiency": 2 },
+    { "name": "MySQL", "proficiency": 3 },
+    { "name": "Oracle", "proficiency": 1 },
+    { "name": "Postgres", "proficiency": 4 }
+  ]
+}

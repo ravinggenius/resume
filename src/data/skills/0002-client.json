@@ -1,0 +1,13 @@
+{
+  "family": "Client",
+  "tags": [
+    { "name": "Android", "proficiency": 1 },
+    { "name": "CSS", "proficiency": 4 },
+    { "name": "HTML", "proficiency": 4 },
+    { "name": "iOS", "proficiency": 1 },
+    { "name": "Next", "proficiency": 4 },
+    { "name": "Redux", "proficiency": 4 },
+    { "name": "Redux Saga", "proficiency": 4 },
+    { "name": "SASS", "proficiency": 4 }
+  ]
+}

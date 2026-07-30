@@ -1,0 +1,12 @@
+{
+  "family": "Languages",
+  "tags": [
+    { "name": "C#", "proficiency": 2 },
+    { "name": "Elixir", "proficiency": 1 },
+    { "name": "JavaScript", "proficiency": 4 },
+    { "name": "PHP", "proficiency": 4 },
+    { "name": "Ruby", "proficiency": 4 },
+    { "name": "SQL", "proficiency": 4 },
+    { "name": "TypeScript", "proficiency": 5 }
+  ]
+}
