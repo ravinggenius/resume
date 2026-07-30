@@ -1,0 +1,27 @@
+---
+interface Props {
+	class?: string;
+	items: Array<unknown>;
+}
+
+const { class: className, items, ...attrs } = Astro.props;
+---
+
+<style>
+	ol {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		list-style-type: none;
+	}
+</style>
+
+<ol class:list={["card-listing", className]} {...attrs}>
+	{
+		await Promise.all(
+			items.map(async (item) => (
+				<li>{await Astro.slots.render("default", [item])}</li>
+			))
+		)
+	}
+</ol>

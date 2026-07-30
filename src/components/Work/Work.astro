@@ -1,45 +1,35 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 import { parseISO } from "date-fns";
 
 import { countMonthsAgo } from "@/utilities/count-months-ago";
 
+import CardListing from "../CardListing/CardListing.astro";
 import CompanyCard from "../CompanyCard/CompanyCard.astro";
 import Section from "../Section/Section.astro";
 
 const experiences = await getCollection("workExperiences");
 ---
 
-<style>
-	ol {
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-		list-style-type: none;
-	}
-</style>
-
 {
 	experiences.length > 0 ? (
 		<Section title="Experience">
-			<ol>
-				{experiences
-					.toSorted(
-						(a, b) =>
-							countMonthsAgo(parseISO(a.data.startDate)) -
-							countMonthsAgo(parseISO(b.data.startDate))
-					)
-					.map((job) => (
-						<li>
-							<CompanyCard
-								{...job.data}
-								title={job.data.position}
-								startedAt={job.data.startDate}
-								stoppedAt={job.data.endDate}
-							/>
-						</li>
-					))}
-			</ol>
+			<CardListing
+				items={experiences.toSorted(
+					(a, b) =>
+						countMonthsAgo(parseISO(a.data.startDate)) -
+						countMonthsAgo(parseISO(b.data.startDate))
+				)}
+			>
+				{({ data: job }: CollectionEntry<"workExperiences">) => (
+					<CompanyCard
+						{...job}
+						title={job.position}
+						startedAt={job.startDate}
+						stoppedAt={job.endDate}
+					/>
+				)}
+			</CardListing>
 		</Section>
 	) : null
 }
