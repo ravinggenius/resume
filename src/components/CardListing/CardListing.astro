@@ -1,13 +1,25 @@
 ---
+interface Item {
+	data: {
+		media?: "all" | "print" | "screen";
+	};
+}
+
 interface Props {
 	class?: string;
-	items: Array<unknown>;
+	items: Array<Item>;
 }
 
 const { class: className, items, ...attrs } = Astro.props;
 ---
 
 <style>
+	@media print {
+		[data-media="screen"] {
+			display: none;
+		}
+	}
+
 	ol {
 		display: flex;
 		flex-direction: column;
@@ -20,7 +32,9 @@ const { class: className, items, ...attrs } = Astro.props;
 	{
 		await Promise.all(
 			items.map(async (item) => (
-				<li>{await Astro.slots.render("default", [item])}</li>
+				<li data-media={item.data.media ?? "all"}>
+					{await Astro.slots.render("default", [item])}
+				</li>
 			))
 		)
 	}
