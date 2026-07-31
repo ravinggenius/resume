@@ -17,6 +17,12 @@ const { name, title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<meta name="viewport" content="width=device-width" />
 		<style is:global>
+			@media print {
+				@page {
+					margin: 1cm;
+				}
+			}
+
 			*,
 			*::before,
 			*::after {

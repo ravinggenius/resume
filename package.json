@@ -7,11 +7,14 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "npm run build:web && npm run build:pdf",
+    "build:pdf": "node scripts/generate-pdf.mjs",
+    "build:web": "astro build",
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write .",
-    "test": "vitest"
+    "test": "vitest",
+    "postinstall": "playwright install --with-deps chromium"
   },
   "dependencies": {
     "astro": "^7.1.3",
@@ -24,6 +27,10 @@
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.7.1",
     "@trivago/prettier-plugin-sort-imports": "^6.0.2",
+    "@types/http-server": "^0.12.4",
+    "@types/node": "^26.1.2",
+    "http-server": "^14.1.1",
+    "playwright": "^1.62.1",
     "prettier": "^3.9.6",
     "prettier-plugin-astro": "^0.14.1",
     "vitest": "^4.1.10"
