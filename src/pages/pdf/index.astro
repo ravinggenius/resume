@@ -1,0 +1,24 @@
+---
+import Education from "@/components/Education/Education.astro";
+import Introduction from "@/components/Introduction/Introduction.astro";
+import Layout from "@/components/Layout/Layout.astro";
+import Skills from "@/components/Skills/Skills.astro";
+import Summary from "@/components/Summary/Summary.astro";
+import Testimonials from "@/components/Testimonials/Testimonials.astro";
+import Work from "@/components/Work/Work.astro";
+import resume from "@/data/resume.json";
+---
+
+<Layout name={resume.basics.name} title={resume.basics.label}>
+	<Introduction />
+
+	<Summary />
+
+	<Skills />
+
+	<Work media="print" />
+
+	<Education />
+
+	<Testimonials />
+</Layout>
