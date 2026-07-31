@@ -1,6 +1,7 @@
 ---
 import Education from "@/components/Education/Education.astro";
 import Introduction from "@/components/Introduction/Introduction.astro";
+import Layout from "@/components/Layout/Layout.astro";
 import Skills from "@/components/Skills/Skills.astro";
 import Summary from "@/components/Summary/Summary.astro";
 import Testimonials from "@/components/Testimonials/Testimonials.astro";
@@ -8,98 +9,16 @@ import Work from "@/components/Work/Work.astro";
 import resume from "@/data/resume.json";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<title>{resume.basics.name} | Résumé</title>
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta
-			name="description"
-			content={`${resume.basics.name} - ${resume.basics.label}`}
-		/>
-		<meta name="generator" content={Astro.generator} />
-		<meta name="viewport" content="width=device-width" />
-		<style is:global>
-			*,
-			*::before,
-			*::after {
-				box-sizing: border-box;
-				margin: 0;
-				padding: 0;
-			}
+<Layout name={resume.basics.name} title={resume.basics.label}>
+	<Introduction />
 
-			body {
-				font-family:
-					"Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-				line-height: 1.5;
-			}
+	<Summary />
 
-			a {
-				color: #337ab7;
-				text-decoration: none;
+	<Skills />
 
-				&:active,
-				&:focus,
-				&:hover {
-					color: #23527c;
-					text-decoration: underline;
-				}
-			}
+	<Work />
 
-			h1,
-			h2,
-			h3 {
-				color: oklch(28% 0.018 250);
-			}
+	<Education />
 
-			li,
-			p {
-				max-block-size: 62ch;
-				text-wrap: pretty;
-			}
-		</style>
-		<style>
-			html {
-				scrollbar-gutter: stable;
-			}
-
-			body {
-				color: oklch(34% 0.016 250);
-				margin: 2rem;
-
-				@media screen {
-					background-color: oklch(98.5% 0.004 250);
-				}
-			}
-
-			main {
-				display: flex;
-				flex-direction: column;
-				gap: 3rem;
-				margin-inline: auto;
-				max-inline-size: 960px;
-
-				@media print {
-					gap: 2rem;
-				}
-			}
-		</style>
-	</head>
-
-	<body>
-		<main>
-			<Introduction />
-
-			<Summary />
-
-			<Skills />
-
-			<Work />
-
-			<Education />
-
-			<Testimonials />
-		</main>
-	</body>
-</html>
+	<Testimonials />
+</Layout>
