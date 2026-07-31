@@ -8,19 +8,48 @@ import CardListing from "../CardListing/CardListing.astro";
 import CompanyCard from "../CompanyCard/CompanyCard.astro";
 import Section from "../Section/Section.astro";
 
-const experiences = await getCollection("workExperiences");
+interface Props {
+	media?: "all" | "print" | "screen";
+}
+
+const { media = "all" } = Astro.props;
+
+const experiences = (await getCollection("workExperiences")).toSorted(
+	(a, b) =>
+		countMonthsAgo(parseISO(a.data.startDate)) -
+		countMonthsAgo(parseISO(b.data.startDate))
+);
+
+const PRINT_SPLIT_COUNT = 1;
+const NBSP = " ";
+
+const titled =
+	media === "print" ? experiences.slice(0, PRINT_SPLIT_COUNT) : experiences;
+
+const untitled = media === "print" ? experiences.slice(PRINT_SPLIT_COUNT) : [];
 ---
 
 {
-	experiences.length > 0 ? (
+	titled.length > 0 ? (
 		<Section title="Experience">
-			<CardListing
-				items={experiences.toSorted(
-					(a, b) =>
-						countMonthsAgo(parseISO(a.data.startDate)) -
-						countMonthsAgo(parseISO(b.data.startDate))
+			<CardListing items={titled}>
+				{({ data: job }: CollectionEntry<"workExperiences">) => (
+					<CompanyCard
+						{...job}
+						title={job.position}
+						startedAt={job.startDate}
+						stoppedAt={job.endDate}
+					/>
 				)}
-			>
+			</CardListing>
+		</Section>
+	) : null
+}
+
+{
+	untitled.length > 0 ? (
+		<Section title={NBSP}>
+			<CardListing items={untitled}>
 				{({ data: job }: CollectionEntry<"workExperiences">) => (
 					<CompanyCard
 						{...job}

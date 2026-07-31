@@ -1,0 +1,97 @@
+---
+interface Props {
+	name: string;
+	title: string;
+}
+
+const { name, title } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>{name} | Résumé</title>
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="description" content={`${name} - ${title}`} />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="viewport" content="width=device-width" />
+		<style is:global>
+			@media print {
+				@page {
+					margin: 1cm;
+				}
+			}
+
+			*,
+			*::before,
+			*::after {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				font-family:
+					"Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+				line-height: 1.5;
+			}
+
+			a {
+				color: #337ab7;
+				text-decoration: none;
+
+				&:active,
+				&:focus,
+				&:hover {
+					color: #23527c;
+					text-decoration: underline;
+				}
+			}
+
+			h1,
+			h2,
+			h3 {
+				color: oklch(28% 0.018 250);
+			}
+
+			li,
+			p {
+				max-block-size: 62ch;
+				text-wrap: pretty;
+			}
+		</style>
+		<style>
+			html {
+				scrollbar-gutter: stable;
+			}
+
+			body {
+				color: oklch(34% 0.016 250);
+				margin: 2rem;
+
+				@media screen {
+					background-color: oklch(98.5% 0.004 250);
+				}
+			}
+
+			main {
+				display: flex;
+				flex-direction: column;
+				gap: 3rem;
+				margin-inline: auto;
+				max-inline-size: 960px;
+
+				@media print {
+					gap: 2rem;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<main>
+			<slot />
+		</main>
+	</body>
+</html>

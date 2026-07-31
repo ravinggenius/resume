@@ -39,7 +39,7 @@ const skills = defineCollection({
 const testimonials = defineCollection({
 	loader: glob({ base: "./src/data/testimonials", pattern: "*.json" }),
 	schema: z.object({
-		show: z.boolean().optional().default(true),
+		media: z.enum(["all", "print", "screen"]).optional().default("all"),
 		name: z.string().nonempty(),
 		position: z.string().nonempty(),
 		company: z.string().nonempty(),
@@ -50,7 +50,7 @@ const testimonials = defineCollection({
 const workExperiences = defineCollection({
 	loader: glob({ base: "./src/data/work-experiences", pattern: "*.json" }),
 	schema: z.object({
-		show: z.boolean().optional().default(true),
+		media: z.enum(["all", "print", "screen"]).optional().default("all"),
 		name: z.string().nonempty(),
 		position: z.string().nonempty(),
 		startDate: z.iso.date(),
