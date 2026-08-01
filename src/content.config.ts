@@ -41,6 +41,38 @@ const educations = defineCollection({
 	})
 });
 
+const interests = defineCollection({
+	loader: glob({ base: "./src/data/interests", pattern: "*.json" }),
+	schema: z.object({
+		name: z.string().nonempty(),
+		keywords: z.array(z.string().nonempty()).nonempty()
+	})
+});
+
+const languages = defineCollection({
+	loader: glob({ base: "./src/data/languages", pattern: "*.json" }),
+	schema: z.object({
+		language: z.string().nonempty(),
+		fluency: z.string().nonempty()
+	})
+});
+
+const projects = defineCollection({
+	loader: glob({ base: "./src/data/projects", pattern: "*.json" }),
+	schema: z.object({
+		name: z.string().nonempty(),
+		type: z.string().nonempty(),
+		url: z.url().optional()
+	})
+});
+
+const references = defineCollection({
+	loader: glob({ base: "./src/data/references", pattern: "*.json" }),
+	schema: z.object({
+		name: z.string().nonempty()
+	})
+});
+
 const skills = defineCollection({
 	loader: glob({ base: "./src/data/skills", pattern: "*.json" }),
 	schema: z.object({
@@ -89,6 +121,10 @@ const workExperiences = defineCollection({
 export const collections = {
 	profiles,
 	educations,
+	interests,
+	languages,
+	projects,
+	references,
 	skills,
 	testimonials,
 	workExperiences
