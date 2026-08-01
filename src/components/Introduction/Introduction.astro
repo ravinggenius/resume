@@ -1,5 +1,13 @@
 ---
-import resume from "@/data/resume.json";
+import { getEntry } from "astro:content";
+
+const maybeProfile = await getEntry("profiles", "default");
+
+if (!maybeProfile) {
+	return new Response(null, { status: 404 });
+}
+
+const { data: profile } = maybeProfile;
 ---
 
 <style>
@@ -64,40 +72,32 @@ import resume from "@/data/resume.json";
 
 <section class="root">
 	<header>
-		<h1 class="name">{resume.basics.name}</h1>
-		<p class="title">{resume.basics.label}</p>
+		<h1 class="name">{profile.name}</h1>
+		<p class="title">{profile.label}</p>
 	</header>
 
 	<section class="body">
 		<address>
-			{resume.basics.location.city}, {resume.basics.location.region}
+			{profile.location.city}, {profile.location.region}
 		</address>
 		<address>
-			<a href={`mailto:${resume.basics.email}`}>{resume.basics.email}</a>
+			<a href={`mailto:${profile.email}`}>{profile.email}</a>
 		</address>
 		<address>
-			<a href={`tel:${resume.basics.phone}`}>{resume.basics.phone}</a>
+			<a href={`tel:${profile.phone}`}>{profile.phone}</a>
 		</address>
 		<address>
-			<a
-				href={resume.basics.url}
-				rel="noopener noreferrer"
-				target="_blank"
-			>
-				{
-					resume.basics.url
-						.replace(/^https?:\/\//, "")
-						.replace(/\/$/, "")
-				}
+			<a href={profile.url} rel="noopener noreferrer" target="_blank">
+				{profile.url.replace(/^https?:\/\//, "").replace(/\/$/, "")}
 			</a>
 		</address>
 	</section>
 
 	{
-		resume.basics.profiles?.length > 0 ? (
+		profile.profiles?.length > 0 ? (
 			<nav>
 				<ul>
-					{resume.basics.profiles.map((profile) => (
+					{profile.profiles.map((profile) => (
 						<li>
 							<a
 								href={profile.url}

@@ -1,39 +1,4 @@
 {
-  "basics": {
-    "name": "Thomas Ingram",
-    "label": "Full-Stack Web Developer; Problem Solver; Collaborator; Mentor",
-    "email": "thomas.ingram@gmail.com",
-    "phone": "+19194496305",
-    "url": "https://www.ravinggenius.com/",
-    "summary": "Senior full-stack developer with 19+ years building and architecting web applications, roughly split between frontend and backend work - from database design and SQL to CSS and polished frontend interfaces. Deep experience with React and TypeScript, having built and maintained design systems used across enterprise products, with additional backend experience in Ruby and C#, and integrating REST and GraphQL APIs. Track record of leading architecture decisions and mentoring junior developers, equally effective owning projects independently or driving them within highly collaborative, cross-functional teams.",
-    "location": {
-      "city": "Greater Raleigh Area",
-      "countryCode": "US",
-      "region": "NC"
-    },
-    "profiles": [
-      {
-        "network": "Download",
-        "username": "download",
-        "url": "/ingram-resume.pdf"
-      },
-      {
-        "network": "Github",
-        "username": "github",
-        "url": "https://github.com/ravinggenius"
-      },
-      {
-        "network": "GitLab",
-        "username": "gitlab",
-        "url": "https://gitlab.com/ravinggenius"
-      },
-      {
-        "network": "LinkedIn",
-        "username": "linkedin",
-        "url": "https://www.linkedin.com/in/ravinggenius/"
-      }
-    ]
-  },
   "languages": [
     {
       "language": "English",

@@ -2,6 +2,32 @@ import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 
+const profiles = defineCollection({
+	loader: glob({ base: "./src/data/profiles", pattern: "*.json" }),
+	schema: z.object({
+		name: z.string().nonempty(),
+		label: z.string().nonempty(),
+		email: z.email(),
+		phone: z.string().nonempty(),
+		url: z.url(),
+		summary: z.string().nonempty(),
+		location: z.object({
+			city: z.string().nonempty(),
+			countryCode: z.string().nonempty(),
+			region: z.string().nonempty()
+		}),
+		profiles: z
+			.array(
+				z.object({
+					network: z.string().nonempty(),
+					username: z.string().nonempty(),
+					url: z.union([z.url(), z.string().nonempty()])
+				})
+			)
+			.nonempty()
+	})
+});
+
 const educations = defineCollection({
 	loader: glob({ base: "./src/data/educations", pattern: "*.json" }),
 	schema: z.object({
@@ -61,6 +87,7 @@ const workExperiences = defineCollection({
 });
 
 export const collections = {
+	profiles,
 	educations,
 	skills,
 	testimonials,

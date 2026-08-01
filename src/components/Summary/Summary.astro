@@ -1,10 +1,18 @@
 ---
-import resume from "@/data/resume.json";
+import { getEntry } from "astro:content";
 
 import Markdown from "../Markdown/Markdown.astro";
 import Section from "../Section/Section.astro";
+
+const maybeProfile = await getEntry("profiles", "default");
+
+if (!maybeProfile) {
+	return new Response(null, { status: 404 });
+}
+
+const { data: profile } = maybeProfile;
 ---
 
 <Section title="Summary">
-	<Markdown content={resume.basics.summary} />
+	<Markdown content={profile.summary} />
 </Section>
