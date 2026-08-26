@@ -15,7 +15,7 @@ const { class: className, title, ...attrs } = Astro.props;
 			"header"
 			"body";
 
-		@media print, screen and (min-width: 600px) {
+		@media screen and (min-width: 600px) {
 			grid-template-areas: "header body";
 			grid-template-columns: auto 1fr;
 		}
@@ -28,7 +28,7 @@ const { class: className, title, ...attrs } = Astro.props;
 	header {
 		grid-area: header;
 
-		@media print, screen and (min-width: 600px) AND (max-width: 779px) {
+		@media screen and (min-width: 600px) AND (max-width: 779px) {
 			writing-mode: vertical-rl;
 		}
 	}
