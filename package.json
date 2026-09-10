@@ -17,7 +17,7 @@
     "postinstall": "playwright install --with-deps chromium"
   },
   "dependencies": {
-    "astro": "^7.1.6",
+    "astro": "^7.2.8",
     "date-fns": "^4.4.0",
     "rehype-stringify": "^10.0.1",
     "remark-parse": "^11.0.0",
